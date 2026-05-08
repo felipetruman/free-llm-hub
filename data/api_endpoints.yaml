@@ -1,0 +1,181 @@
+# Mapeamento curado: slug → api_base OpenAI-compatible
+# Usado por scripts/discover_models.py para enriquecer o hub.yaml
+# com a lista real de modelos disponíveis em cada provider.
+#
+# Formato:
+#   <slug>:
+#     api_base: <URL base OpenAI-compat, sem /models no final>
+#     auth: none | bearer | optional
+#     notes: <opcional>
+#
+# Para contribuir, abra um PR adicionando o slug do hub.yaml + api_base aqui.
+# Veja CONTRIBUTING.md para detalhes.
+
+# ─── Cloud providers (auth obrigatório, mas endpoint público) ────────────
+groq:
+  api_base: https://api.groq.com/openai/v1
+  auth: bearer
+
+cerebras:
+  api_base: https://api.cerebras.ai/v1
+  auth: bearer
+
+mistral:
+  api_base: https://api.mistral.ai/v1
+  auth: bearer
+
+together:
+  api_base: https://api.together.xyz/v1
+  auth: bearer
+
+fireworks:
+  api_base: https://api.fireworks.ai/inference/v1
+  auth: bearer
+
+deepseek:
+  api_base: https://api.deepseek.com/v1
+  auth: bearer
+
+moonshot:
+  api_base: https://api.moonshot.cn/v1
+  auth: bearer
+
+zhipu:
+  api_base: https://open.bigmodel.cn/api/paas/v4
+  auth: bearer
+
+dashscope:
+  api_base: https://dashscope.aliyuncs.com/compatible-mode/v1
+  auth: bearer
+
+minimax:
+  api_base: https://api.minimax.chat/v1
+  auth: bearer
+
+siliconflow:
+  api_base: https://api.siliconflow.cn/v1
+  auth: bearer
+
+xai-grok:
+  api_base: https://api.x.ai/v1
+  auth: bearer
+
+perplexity-api:
+  api_base: https://api.perplexity.ai
+  auth: bearer
+
+openai-api:
+  api_base: https://api.openai.com/v1
+  auth: bearer
+
+scaleway:
+  api_base: https://api.scaleway.ai/v1
+  auth: bearer
+
+kluster:
+  api_base: https://api.kluster.ai/v1
+  auth: bearer
+
+# ─── Endpoints públicos (sem auth, /models aberto) ───────────────────────
+openrouter:
+  api_base: https://openrouter.ai/api/v1
+  auth: optional
+
+deepinfra:
+  api_base: https://api.deepinfra.com/v1/openai
+  auth: optional
+
+novita:
+  api_base: https://api.novita.ai/v3/openai
+  auth: optional
+
+sambanova:
+  api_base: https://api.sambanova.ai/v1
+  auth: optional
+
+llm7:
+  api_base: https://api.llm7.io/v1
+  auth: none
+  notes: "Free public proxy with curated models"
+
+github-models:
+  api_base: https://models.github.ai/inference
+  auth: bearer
+  notes: "Requires GitHub PAT"
+
+huggingface-inference:
+  api_base: https://router.huggingface.co/v1
+  auth: bearer
+
+cloudflare-workers-ai:
+  api_base: https://api.cloudflare.com/client/v4/accounts/{account_id}/ai/v1
+  auth: bearer
+  notes: "URL contém placeholder {account_id} — discovery skipped"
+
+vercel-ai-gateway:
+  api_base: https://ai-gateway.vercel.sh/v1
+  auth: bearer
+
+nvidia-nim:
+  api_base: https://integrate.api.nvidia.com/v1
+  auth: bearer
+
+ollama-cloud:
+  api_base: https://ollama.com/api
+  auth: bearer
+
+opencode-zen:
+  api_base: https://opencode.ai/v1
+  auth: bearer
+
+# ─── Local-only (não testáveis em CI) ────────────────────────────────────
+ollama:
+  api_base: http://localhost:11434/v1
+  auth: none
+  notes: "local-only; discovery skipped in CI"
+
+vllm:
+  api_base: http://localhost:8000/v1
+  auth: none
+  notes: "local-only; discovery skipped in CI"
+
+llama-cpp:
+  api_base: http://localhost:8080/v1
+  auth: none
+  notes: "local-only; discovery skipped in CI"
+
+localai:
+  api_base: http://localhost:8080/v1
+  auth: none
+  notes: "local-only; discovery skipped in CI"
+
+lmdeploy:
+  api_base: http://localhost:23333/v1
+  auth: none
+  notes: "local-only; discovery skipped in CI"
+
+sglang:
+  api_base: http://localhost:30000/v1
+  auth: none
+  notes: "local-only; discovery skipped in CI"
+
+tgi:
+  api_base: http://localhost:8080/v1
+  auth: none
+  notes: "local-only; discovery skipped in CI"
+
+aphrodite:
+  api_base: http://localhost:2242/v1
+  auth: none
+  notes: "local-only; discovery skipped in CI"
+
+tensorrt-llm:
+  api_base: http://localhost:8000/v1
+  auth: none
+  notes: "local-only; discovery skipped in CI"
+
+# ─── Adicionado pós-pesquisa (kilo-gateway tem /models público) ──────────
+kilo-gateway:
+  api_base: https://api.kilo.ai/api/gateway
+  auth: optional
+  notes: "BYOK gateway, /models endpoint is public without auth"
