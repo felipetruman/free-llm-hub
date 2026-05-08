@@ -93,6 +93,10 @@ jobs:
         run: python scripts/verify_endpoints.py
         continue-on-error: true  # falha de rede não deve quebrar o run
 
+      - name: Discover models (live /v1/models probe)
+        run: python scripts/discover_models.py --skip-local
+        continue-on-error: true  # discovery best-effort, não quebra build
+
       - name: Render README (EN + PT-BR)
         run: python scripts/render_readme.py
 
