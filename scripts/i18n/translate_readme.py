@@ -21,8 +21,12 @@ import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass
 from pathlib import Path
+from typing import TYPE_CHECKING
 
 from dotenv import load_dotenv
+
+if TYPE_CHECKING:
+    from google.genai import Client as GenaiClient  # noqa: F401
 
 # ─── Config ─────────────────────────────────────────────────────────────
 ROOT = Path(__file__).resolve().parents[2]
@@ -103,18 +107,23 @@ def file_hash(content: str) -> str:
     return hashlib.sha256(content.encode("utf-8")).hexdigest()
 
 
-def load_cache() -> dict[str, str]:
+def load_cache() -> set[str]:
     if CACHE_FILE.exists():
         try:
-            return json.loads(CACHE_FILE.read_text(encoding="utf-8"))
-        except json.JSONDecodeError:
-            log.warning("Cache file corrupted, ignoring")
-    return {}
+            data = json.loads(CACHE_FILE.read_text(encoding="utf-8"))
+            if isinstance(data, list):
+                return set(data)
+            if isinstance(data, dict):
+                # backward compat with prior dict format
+                return set(data.keys())
+        except json.JSONDecodeError as e:
+            log.warning("Cache file corrupted (%s), ignoring: %s", CACHE_FILE.name, e)
+    return set()
 
 
-def save_cache(cache: dict[str, str]) -> None:
+def save_cache(cache: set[str]) -> None:
     tmp = CACHE_FILE.with_suffix(".tmp")
-    tmp.write_text(json.dumps(cache, indent=2), encoding="utf-8")
+    tmp.write_text(json.dumps(sorted(cache), indent=2), encoding="utf-8")
     tmp.replace(CACHE_FILE)
 
 
@@ -187,17 +196,28 @@ def inject_selector(content: str, current_lang: str | None) -> str:
     lines = content.splitlines()
     out: list[str] = []
     inserted = False
-    for line in lines:
+    i = 0
+    while i < len(lines):
+        line = lines[i]
         out.append(line)
         if not inserted and line.startswith("# "):
-            out.append("")        # blank after H1
-            out.append(selector)  # selector
-            out.append("")        # blank after selector (renders next badge correctly)
+            # Blank line BEFORE and AFTER are required — without them, GitHub
+            # merges adjacent badges/images into the same paragraph as the selector.
+            out.append("")
+            out.append(selector)
+            out.append("")
             inserted = True
+            # If the source already had blank line(s) after the H1, skip them
+            # so we don't end up with 2+ blank lines after the selector.
+            j = i + 1
+            while j < len(lines) and lines[j] == "":
+                j += 1
+            i = j
+            continue
+        i += 1
     result = "\n".join(out)
-    # Collapse 3+ consecutive blanks to 2
-    while "\n\n\n\n" in result:
-        result = result.replace("\n\n\n\n", "\n\n\n")
+    # Belt-and-suspenders: collapse any remaining 3+ blank lines
+    result = re.sub(r"\n{4,}", "\n\n\n", result)
     return result.rstrip() + "\n"
 
 
@@ -292,7 +312,7 @@ def _is_non_transient(exc: BaseException) -> bool:
     return any(p in msg for p in _NON_TRANSIENT_PATTERNS)
 
 
-def call_gemini(client, prompt: str, lang_code: str) -> str:
+def call_gemini(client: "GenaiClient", prompt: str, lang_code: str) -> str:
     from google.genai import types  # noqa: PLC0415 — deferred so --check works without google-genai installed
 
     last_err: Exception | None = None
@@ -338,10 +358,10 @@ def call_gemini(client, prompt: str, lang_code: str) -> str:
 
 
 def translate_one(
-    client,
+    client: "GenaiClient",
     info: LangInfo,
     source_for_llm: str,
-    cache: dict[str, str],
+    cache: set[str],
     src_hash: str,
     force: bool,
     dry_run: bool,
@@ -350,7 +370,7 @@ def translate_one(
     target_file = I18N_DIR / f"README.{code}.md"
     cache_key = f"{code}:{src_hash}"
 
-    if not force and cache.get(cache_key) and target_file.exists():
+    if not force and cache_key in cache and target_file.exists():
         return code, True, f"cached (hash {src_hash[:8]})"
 
     if dry_run:
@@ -366,7 +386,7 @@ def translate_one(
         return code, False, f"validation failed: {'; '.join(problems)}"
 
     atomic_write(target_file, translated)
-    cache[cache_key] = target_file.name
+    cache.add(cache_key)
     return code, True, f"{len(translated)} chars → .github/i18n/{target_file.name}"
 
 
@@ -419,7 +439,7 @@ def main() -> int:
     source_for_llm = strip_existing_selector(source_content)
     src_hash = file_hash(source_content)
 
-    from google import genai  # noqa: PLC0415
+    from google import genai  # noqa: PLC0415 — deferred so --check works without google-genai installed
     cache = load_cache()
     client = genai.Client(api_key=API_KEY)
 
