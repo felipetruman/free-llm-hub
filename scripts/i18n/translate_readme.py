@@ -33,10 +33,21 @@ CACHE_FILE = ROOT / "scripts" / "i18n" / ".translation_cache.json"
 
 load_dotenv(ROOT / ".env")
 
+def _env_int(name: str, default: int) -> int:
+    raw = os.getenv(name)
+    if raw is None or raw == "":
+        return default
+    try:
+        return int(raw)
+    except ValueError:
+        sys.stderr.write(f"warn: invalid int for {name}={raw!r}, using default {default}\n")
+        return default
+
+
 API_KEY = os.getenv("GEMINI_API_KEY")
 MODEL_NAME = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
-MAX_OUTPUT_TOKENS = int(os.getenv("GEMINI_MAX_OUTPUT_TOKENS", "32768"))
-MAX_WORKERS = int(os.getenv("I18N_MAX_WORKERS", "3"))
+MAX_OUTPUT_TOKENS = _env_int("GEMINI_MAX_OUTPUT_TOKENS", 32768)
+MAX_WORKERS = _env_int("I18N_MAX_WORKERS", 3)
 MAX_RETRIES = 4
 BASE_BACKOFF = 2.0
 
@@ -102,7 +113,16 @@ def load_cache() -> dict[str, str]:
 
 
 def save_cache(cache: dict[str, str]) -> None:
-    CACHE_FILE.write_text(json.dumps(cache, indent=2), encoding="utf-8")
+    tmp = CACHE_FILE.with_suffix(".tmp")
+    tmp.write_text(json.dumps(cache, indent=2), encoding="utf-8")
+    tmp.replace(CACHE_FILE)
+
+
+def atomic_write(path: Path, content: str) -> None:
+    """Write file atomically — prevents partial writes on crash."""
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    tmp.write_text(content, encoding="utf-8")
+    tmp.replace(path)
 
 
 # ─── Selector ───────────────────────────────────────────────────────────
@@ -249,8 +269,31 @@ def check_sync() -> int:
 
 
 # ─── Translation ────────────────────────────────────────────────────────
+# Substring patterns in exception messages that indicate non-transient failures
+# (auth, quota exhausted, invalid request). Avoid hard SDK imports — match by text.
+_NON_TRANSIENT_PATTERNS = (
+    "api key",
+    "api_key",
+    "permission",
+    "permission_denied",
+    "unauthenticated",
+    "unauthorized",
+    "invalid argument",
+    "invalid_argument",
+    "not found",
+    "404",
+    "401",
+    "403",
+)
+
+
+def _is_non_transient(exc: BaseException) -> bool:
+    msg = str(exc).lower()
+    return any(p in msg for p in _NON_TRANSIENT_PATTERNS)
+
+
 def call_gemini(client, prompt: str, lang_code: str) -> str:
-    from google.genai import types  # noqa: PLC0415
+    from google.genai import types  # noqa: PLC0415 — deferred so --check works without google-genai installed
 
     last_err: Exception | None = None
     for attempt in range(1, MAX_RETRIES + 1):
@@ -270,18 +313,21 @@ def call_gemini(client, prompt: str, lang_code: str) -> str:
             cand = response.candidates[0]
             finish = getattr(cand, "finish_reason", None)
             finish_name = getattr(finish, "name", str(finish))
-            if finish_name not in (None, "STOP", "MAX_TOKENS"):
+            if finish_name not in (None, "STOP"):
+                # MAX_TOKENS, SAFETY, RECITATION, OTHER — treat as retryable failure
+                # (truncated output should NOT be silently saved as success)
                 raise RuntimeError(f"finish_reason={finish_name}")
-            if finish_name == "MAX_TOKENS":
-                log.warning("[%s] hit MAX_TOKENS — output may be truncated", lang_code)
 
             text = response.text
             if not text:
                 raise RuntimeError("empty response text")
             return text
 
-        except Exception as e:  # noqa: BLE001
+        except Exception as e:  # noqa: BLE001 — Gemini SDK raises many concrete types across versions
             last_err = e
+            if _is_non_transient(e):
+                log.error("[%s] non-transient error, aborting retries: %s", lang_code, e)
+                raise RuntimeError(f"non-transient error: {e}") from e
             if attempt == MAX_RETRIES:
                 break
             wait = BASE_BACKOFF * (2 ** (attempt - 1))
@@ -319,7 +365,7 @@ def translate_one(
     if problems:
         return code, False, f"validation failed: {'; '.join(problems)}"
 
-    target_file.write_text(translated, encoding="utf-8")
+    atomic_write(target_file, translated)
     cache[cache_key] = target_file.name
     return code, True, f"{len(translated)} chars → .github/i18n/{target_file.name}"
 
@@ -362,9 +408,11 @@ def main() -> int:
     # Normalize root README with selector
     root_with_selector = inject_selector(source_content, current_lang=None)
     if root_with_selector != source_content:
-        if not args.dry_run:
-            SOURCE.write_text(root_with_selector, encoding="utf-8")
-        log.info("Language selector normalized in %s", SOURCE.name)
+        if args.dry_run:
+            log.info("[dry-run] Language selector would be normalized in %s", SOURCE.name)
+        else:
+            atomic_write(SOURCE, root_with_selector)
+            log.info("Language selector normalized in %s", SOURCE.name)
         source_content = root_with_selector
 
     # Strip selector before sending to LLM — we re-inject per-language after
@@ -390,11 +438,18 @@ def main() -> int:
             for code in targets
         }
         for fut in as_completed(futures):
-            code, ok, msg = fut.result()
-            results[code] = (ok, msg)
+            code = futures[fut]
             info = LANGUAGES[code]
-            status = "OK" if ok else "FAIL"
-            log.info("%s [%s] %s — %s", info.flag, code, status, msg)
+            try:
+                code, ok, msg = fut.result()
+            except Exception as e:  # noqa: BLE001 — preserve partial progress on worker crash
+                ok, msg = False, f"worker exception: {e}"
+                log.error("%s [%s] EXCEPTION — %s", info.flag, code, e)
+            results[code] = (ok, msg)
+            if ok:
+                log.info("%s [%s] OK — %s", info.flag, code, msg)
+            else:
+                log.error("%s [%s] FAIL — %s", info.flag, code, msg)
 
     save_cache(cache)
 
@@ -405,7 +460,7 @@ def main() -> int:
 
     # Persist source hash so --check can verify sync
     if not args.dry_run:
-        HASH_FILE.write_text(src_hash, encoding="utf-8")
+        atomic_write(HASH_FILE, src_hash)
         log.info("Source hash saved: %s", HASH_FILE.relative_to(ROOT))
 
     log.info("Done — %d translation(s) succeeded", len(results))
