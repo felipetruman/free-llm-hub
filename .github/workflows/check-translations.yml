@@ -1,0 +1,32 @@
+name: Check Translations Sync
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'README.md'
+      - '.github/i18n/**'
+      - 'scripts/i18n/**'
+  pull_request:
+    paths:
+      - 'README.md'
+      - '.github/i18n/**'
+      - 'scripts/i18n/**'
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install minimal deps
+        run: pip install python-dotenv
+
+      - name: Verify translations are in sync
+        run: python scripts/i18n/translate_readme.py --check

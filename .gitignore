@@ -44,3 +44,4 @@ scripts/__pycache__/
 # Claude Code & harness internal state (never commit)
 .claude/
 .harness-mem/
+scripts/i18n/.translation_cache.json
