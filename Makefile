@@ -42,3 +42,34 @@ clean:
 
 clean-all: clean
 	@rm -rf .venv
+
+# ─── Tools catalog & Docs site ──────────────────────────────────────────────
+
+.PHONY: render-tools
+render-tools:
+	python scripts/render_tools_section.py
+
+.PHONY: report
+report:
+	python scripts/generate_report.py
+
+.PHONY: report-pdf
+report-pdf:
+	python scripts/generate_report.py --pdf
+
+.PHONY: docs-serve
+docs-serve:
+	cp README.md docs/index.md
+	mkdocs serve
+
+.PHONY: docs-build
+docs-build:
+	cp README.md docs/index.md
+	mkdocs build --strict
+
+.PHONY: render-all
+render-all:
+	python scripts/render_readme.py
+	python scripts/render_tools_section.py > /tmp/_sections.md
+	python scripts/generate_report.py
+	@echo "✅ All artifacts rendered"

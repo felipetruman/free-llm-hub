@@ -30,3 +30,13 @@ build/
 data/cache/
 data/verified.json
 actionlint
+
+# MkDocs build output
+site/
+
+# Backup files
+*.bak
+*.orig
+
+# Python cache from new scripts
+scripts/__pycache__/

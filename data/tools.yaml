@@ -1,0 +1,203 @@
+# Tools Catalog — Proxies, Gateways, Routers, Frameworks
+# Complements data/hub.yaml (which lists API providers).
+# Schema:
+#   - id: kebab-case unique identifier
+#     name: human-readable name
+#     category: proxy | gateway | router | framework | cli | observability
+#     repo: github url
+#     homepage: optional landing page
+#     license: SPDX identifier
+#     language: primary language
+#     stars: approximate (informational only, refreshed by CI later)
+#     pricing: free | freemium | byok | paid
+#     description_en: 1-2 sentences in English
+#     description_pt: 1-2 sentences in Portuguese (BR)
+#     highlights: list of key features
+#     openai_compatible: true | false
+
+version: 1
+updated: 2026-05-20
+
+tools:
+  - id: freellmapi
+    name: FreeLLMAPI
+    category: proxy
+    repo: https://github.com/tashfeenahmed/freellmapi
+    homepage: https://tashfeenahmed.github.io/freellmapi/
+    license: MIT
+    language: TypeScript
+    stars: 2609
+    pricing: free
+    openai_compatible: true
+    description_en: |
+      OpenAI-compatible local proxy aggregating free-tier keys from ~14
+      providers (Google, Groq, Cerebras, SambaNova, NVIDIA, Mistral,
+      OpenRouter, GitHub Models, Cohere, Cloudflare, Z.ai, etc.) behind a
+      single /v1/chat/completions endpoint, with automatic failover and
+      AES-256-GCM encrypted key storage.
+    description_pt: |
+      Proxy local compatível com OpenAI que agrega chaves de free-tier de
+      ~14 providers atrás de um único endpoint /v1/chat/completions, com
+      failover automático e armazenamento de chaves criptografado
+      (AES-256-GCM).
+    highlights:
+      - Automatic failover on 429/5xx
+      - Per-key RPM/RPD/TPM/TPD tracking
+      - React/Vite admin dashboard
+      - Sticky sessions for context continuity
+      - ~1B+ free tokens/month aggregated
+    notes: For personal experimentation only — review provider ToS.
+
+  - id: litellm
+    name: LiteLLM
+    category: proxy
+    repo: https://github.com/BerriAI/litellm
+    homepage: https://www.litellm.ai/
+    license: MIT
+    language: Python
+    stars: 17000
+    pricing: freemium
+    openai_compatible: true
+    description_en: |
+      Python SDK and proxy server to call 100+ LLM APIs using the OpenAI
+      input/output format. The OG of the multi-provider abstraction space.
+    description_pt: |
+      SDK Python e servidor proxy para chamar 100+ APIs LLM no formato
+      OpenAI. Referência da categoria de abstração multi-provider.
+    highlights:
+      - 100+ providers supported
+      - Cost tracking & budget alerts
+      - Caching (Redis, S3)
+      - Load balancing & fallbacks
+      - Both SDK and standalone proxy modes
+
+  - id: cli-proxy-api
+    name: CLI Proxy API
+    category: proxy
+    repo: https://github.com/router-for-me/CLI-Proxy-API
+    license: MIT
+    language: Go
+    stars: 31400
+    pricing: free
+    openai_compatible: true
+    description_en: |
+      Wraps Gemini CLI, OpenAI Codex CLI, Claude Code, Qwen Code and others
+      behind an OpenAI-compatible API, so paid CLI auth quotas become
+      programmatically usable.
+    description_pt: |
+      Encapsula Gemini CLI, OpenAI Codex CLI, Claude Code, Qwen Code e
+      outros atrás de uma API compatível com OpenAI, permitindo usar as
+      cotas das CLIs pagas programaticamente.
+    highlights:
+      - Reuses CLI auth (no extra API keys)
+      - Multi-CLI multiplexing
+      - Streaming support
+      - Active maintenance
+
+  - id: omniroute
+    name: OmniRoute
+    category: router
+    repo: https://github.com/aurelio-labs/omniroute
+    license: Apache-2.0
+    language: Python
+    stars: 4200
+    pricing: free
+    openai_compatible: true
+    description_en: |
+      Multi-provider router supporting 160+ providers, with RTK and Caveman
+      compression techniques reducing token usage by up to 95%.
+    description_pt: |
+      Roteador multi-provider com 160+ providers, usando técnicas RTK e
+      Caveman compression para reduzir uso de tokens em até 95%.
+    highlights:
+      - 160+ providers
+      - Token compression (RTK + Caveman)
+      - Up to 95% cost reduction reported
+      - Python-first design
+
+  - id: 9router
+    name: 9Router
+    category: router
+    repo: https://github.com/9cat/9router
+    license: MIT
+    language: TypeScript
+    stars: 5400
+    pricing: free
+    openai_compatible: true
+    description_en: |
+      Three-tier fallback router (subscription → cheap → free) with RTK
+      reducing tokens by ~40%.
+    description_pt: |
+      Roteador com fallback em três camadas (subscription → cheap → free)
+      com RTK reduzindo tokens em ~40%.
+    highlights:
+      - 3-tier strategy
+      - ~40% token reduction via RTK
+      - Optimizes cost across plan types
+
+  - id: one-api
+    name: One API
+    category: gateway
+    repo: https://github.com/songquanpeng/one-api
+    license: MIT
+    language: Go
+    stars: 20000
+    pricing: free
+    openai_compatible: true
+    description_en: |
+      Classic OpenAI-compatible gateway for managing multiple LLM providers
+      with quotas, billing, and a built-in admin UI. Widely deployed in
+      Chinese AI ecosystem.
+    description_pt: |
+      Gateway clássico compatível com OpenAI para gerenciar múltiplos
+      providers LLM com cotas, billing e UI admin embutida. Amplamente
+      adotado no ecossistema chinês de IA.
+    highlights:
+      - Multi-tenant with quotas
+      - Built-in billing & analytics
+      - Web admin UI
+      - Go binary — easy deploy
+
+  - id: portkey
+    name: Portkey
+    category: observability
+    repo: https://github.com/Portkey-AI/gateway
+    homepage: https://portkey.ai/
+    license: MIT
+    language: TypeScript
+    stars: 8000
+    pricing: freemium
+    openai_compatible: true
+    description_en: |
+      Production-grade AI gateway with observability, caching, fallbacks,
+      and prompt management. SaaS + self-hostable.
+    description_pt: |
+      Gateway de IA grau-de-produção com observabilidade, cache, fallbacks
+      e gerenciamento de prompts. SaaS + self-hosted.
+    highlights:
+      - Observability dashboard
+      - Semantic cache
+      - 250+ providers
+      - Guardrails & PII redaction
+
+  - id: helicone
+    name: Helicone
+    category: observability
+    repo: https://github.com/Helicone/helicone
+    homepage: https://www.helicone.ai/
+    license: Apache-2.0
+    language: TypeScript
+    stars: 4500
+    pricing: freemium
+    openai_compatible: true
+    description_en: |
+      Open-source observability platform for LLMs — logging, caching,
+      experiments, and cost analytics via 1-line proxy integration.
+    description_pt: |
+      Plataforma open-source de observabilidade para LLMs — logging, cache,
+      experimentos e analytics de custo via integração proxy de 1 linha.
+    highlights:
+      - 1-line integration
+      - Caching with TTL
+      - A/B testing on prompts
+      - Cost dashboards
