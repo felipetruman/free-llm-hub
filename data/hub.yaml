@@ -1,3 +1,11 @@
+# ============================================================
+# Free LLM Hub - Master Database
+# Auto-merged from data/0X-*.yaml files
+# ============================================================
+
+# ============================================================
+# 1. PROVIDER APIs - PERMANENT FREE
+# ============================================================
 - slug: groq
   name: Groq
   category: inference-provider
@@ -6,24 +14,12 @@
   website: https://groq.com
   github: https://github.com/groq
   openai_compatible: true
-  pricing:
-    model: freemium
-    free_tier: true
-    requires_credit_card: false
-  rate_limits:
-    rpm: 30
-    rpd: 1000
-  models:
-  - llama-3.3-70b
-  - llama-4-scout
-  - kimi-k2
-  - qwen3
-  - deepseek-r1-distill
-  tags:
-  - ultra-fast
-  - lpu
-  - openai-compat
+  pricing: {model: freemium, free_tier: true, requires_credit_card: false}
+  rate_limits: {rpm: 30, rpd: 1000}
+  models: [llama-3.3-70b, llama-4-scout, kimi-k2, qwen3, deepseek-r1-distill]
+  tags: [ultra-fast, lpu, openai-compat]
   status: active
+
 - slug: cerebras
   name: Cerebras
   category: inference-provider
@@ -31,21 +27,12 @@
   country: US
   website: https://cloud.cerebras.ai
   openai_compatible: true
-  pricing:
-    model: freemium
-    free_tier: true
-    requires_credit_card: false
-  rate_limits:
-    rpm: 30
-    rpd: 14400
-  models:
-  - llama-3.3-70b
-  - qwen3-235b
-  - gpt-oss-120b
-  tags:
-  - wafer-scale
-  - ultra-fast
+  pricing: {model: freemium, free_tier: true, requires_credit_card: false}
+  rate_limits: {rpm: 30, rpd: 14400}
+  models: [llama-3.3-70b, qwen3-235b, gpt-oss-120b]
+  tags: [wafer-scale, ultra-fast]
   status: active
+
 - slug: google-ai-studio
   name: Google AI Studio (Gemini)
   category: provider-api
@@ -53,23 +40,12 @@
   country: US
   website: https://aistudio.google.com
   openai_compatible: false
-  pricing:
-    model: freemium
-    free_tier: true
-    requires_credit_card: false
-  rate_limits:
-    rpm: 15
-    rpd: 1000
-  models:
-  - gemini-2.5-pro
-  - gemini-2.5-flash
-  - gemini-2.5-flash-lite
-  - gemma-3-27b
-  tags:
-  - multimodal
-  - 1m-context
-  - geo-restricted-eu
+  pricing: {model: freemium, free_tier: true, requires_credit_card: false}
+  rate_limits: {rpm: 15, rpd: 1000}
+  models: [gemini-2.5-pro, gemini-2.5-flash, gemini-2.5-flash-lite, gemma-3-27b]
+  tags: [multimodal, 1m-context, geo-restricted-eu]
   status: active
+
 - slug: mistral
   name: Mistral AI (La Plateforme)
   category: provider-api
@@ -77,21 +53,12 @@
   country: FR
   website: https://console.mistral.ai
   openai_compatible: true
-  pricing:
-    model: freemium
-    free_tier: true
-  rate_limits:
-    rpm: 60
-    monthly_tokens: 1000000000
-  models:
-  - mistral-large-3
-  - mistral-small-3.1
-  - ministral-8b
-  - codestral
-  tags:
-  - european
-  - codestral
+  pricing: {model: freemium, free_tier: true}
+  rate_limits: {rpm: 60, monthly_tokens: 1000000000}
+  models: [mistral-large-3, mistral-small-3.1, ministral-8b, codestral]
+  tags: [european, codestral]
   status: active
+
 - slug: cohere
   name: Cohere
   category: provider-api
@@ -99,23 +66,12 @@
   country: CA
   website: https://cohere.com
   openai_compatible: false
-  pricing:
-    model: freemium
-    free_tier: true
-  rate_limits:
-    rpm: 20
-    monthly_tokens: null
-  models:
-  - command-a
-  - command-r-plus
-  - command-r7b
-  - embed-4
-  - rerank-3.5
-  tags:
-  - embeddings
-  - rerank
-  - non-commercial-free
+  pricing: {model: freemium, free_tier: true}
+  rate_limits: {rpm: 20, monthly_tokens: null}
+  models: [command-a, command-r-plus, command-r7b, embed-4, rerank-3.5]
+  tags: [embeddings, rerank, non-commercial-free]
   status: active
+
 - slug: zhipu
   name: Zhipu AI (Z.AI / GLM)
   category: provider-api
@@ -123,18 +79,11 @@
   country: CN
   website: https://open.bigmodel.cn
   openai_compatible: true
-  pricing:
-    model: freemium
-    free_tier: true
-  models:
-  - glm-4.7-flash
-  - glm-4.5-flash
-  - glm-4.6v-flash
-  - glm-5
-  tags:
-  - chinese
-  - free-flash-models
+  pricing: {model: freemium, free_tier: true}
+  models: [glm-4.7-flash, glm-4.5-flash, glm-4.6v-flash, glm-5]
+  tags: [chinese, free-flash-models]
   status: active
+
 - slug: nvidia-nim
   name: NVIDIA NIM
   category: inference-provider
@@ -142,17 +91,11 @@
   country: US
   website: https://build.nvidia.com
   openai_compatible: true
-  pricing:
-    model: freemium
-    free_tier: true
-  rate_limits:
-    rpm: 40
-  models:
-  - llama-3.3-70b
-  - mistral-large
-  - qwen3-235b
-  - deepseek-r1
+  pricing: {model: freemium, free_tier: true}
+  rate_limits: {rpm: 40}
+  models: [llama-3.3-70b, mistral-large, qwen3-235b, deepseek-r1]
   status: active
+
 - slug: openrouter
   name: OpenRouter
   category: gateway
@@ -160,22 +103,12 @@
   country: US
   website: https://openrouter.ai
   openai_compatible: true
-  pricing:
-    model: freemium
-    free_tier: true
-  rate_limits:
-    rpm: 20
-    rpd: 50
-  models:
-  - deepseek-r1-free
-  - llama-3.3-70b-free
-  - gpt-oss-120b-free
-  - qwen3-free
-  tags:
-  - aggregator
-  - 30-free-models
-  - $10-topup-1k-rpd
+  pricing: {model: freemium, free_tier: true}
+  rate_limits: {rpm: 20, rpd: 50}
+  models: [deepseek-r1-free, llama-3.3-70b-free, gpt-oss-120b-free, qwen3-free]
+  tags: [aggregator, 30-free-models, $10-topup-1k-rpd]
   status: active
+
 - slug: github-models
   name: GitHub Models
   category: gateway
@@ -183,22 +116,12 @@
   country: US
   website: https://github.com/marketplace/models
   openai_compatible: true
-  pricing:
-    model: freemium
-    free_tier: true
-  rate_limits:
-    rpm: 15
-    rpd: 150
-  models:
-  - gpt-5
-  - claude-sonnet-4
-  - llama-3.3-70b
-  - deepseek-r1
-  - grok-3
-  tags:
-  - github-token
-  - multi-vendor
+  pricing: {model: freemium, free_tier: true}
+  rate_limits: {rpm: 15, rpd: 150}
+  models: [gpt-5, claude-sonnet-4, llama-3.3-70b, deepseek-r1, grok-3]
+  tags: [github-token, multi-vendor]
   status: active
+
 - slug: cloudflare-workers-ai
   name: Cloudflare Workers AI
   category: inference-provider
@@ -206,19 +129,12 @@
   country: US
   website: https://developers.cloudflare.com/workers-ai
   openai_compatible: true
-  pricing:
-    model: freemium
-    free_tier: true
-  rate_limits:
-    rpd: null
-  models:
-  - llama-3.3-70b
-  - qwen-qwq-32b
-  - +47 more
-  tags:
-  - edge
-  - 10k-neurons-day
+  pricing: {model: freemium, free_tier: true}
+  rate_limits: {rpd: null}
+  models: [llama-3.3-70b, qwen-qwq-32b, "+47 more"]
+  tags: [edge, 10k-neurons-day]
   status: active
+
 - slug: huggingface-inference
   name: HuggingFace Inference Providers
   category: inference-provider
@@ -226,19 +142,11 @@
   country: US
   website: https://huggingface.co/docs/inference-providers
   openai_compatible: true
-  pricing:
-    model: freemium
-    free_tier: true
-    trial_credits_usd: 0.1
-  models:
-  - llama-3.3-70b
-  - qwen2.5-72b
-  - mistral-7b
-  - many more
-  tags:
-  - hub
-  - multi-provider
+  pricing: {model: freemium, free_tier: true, trial_credits_usd: 0.10}
+  models: [llama-3.3-70b, qwen2.5-72b, mistral-7b, "many more"]
+  tags: [hub, multi-provider]
   status: active
+
 - slug: vercel-ai-gateway
   name: Vercel AI Gateway
   category: gateway
@@ -246,12 +154,10 @@
   country: US
   website: https://vercel.com/ai-gateway
   openai_compatible: true
-  pricing:
-    model: freemium
-    free_tier: true
-  models:
-  - multiple
+  pricing: {model: freemium, free_tier: true}
+  models: [multiple]
   status: active
+
 - slug: opencode-zen
   name: OpenCode Zen
   category: inference-provider
@@ -259,10 +165,9 @@
   country: US
   website: https://opencode.ai
   openai_compatible: true
-  pricing:
-    model: freemium
-    free_tier: true
+  pricing: {model: freemium, free_tier: true}
   status: active
+
 - slug: ollama-cloud
   name: Ollama Cloud
   category: inference-provider
@@ -270,16 +175,11 @@
   country: US
   website: https://ollama.com/cloud
   openai_compatible: true
-  pricing:
-    model: freemium
-    free_tier: true
-  models:
-  - deepseek-v3.2
-  - qwen3.5
-  - kimi-k2.5
-  tags:
-  - 1-concurrent-model
+  pricing: {model: freemium, free_tier: true}
+  models: [deepseek-v3.2, qwen3.5, kimi-k2.5]
+  tags: [1-concurrent-model]
   status: active
+
 - slug: llm7
   name: LLM7.io
   category: inference-provider
@@ -287,15 +187,11 @@
   country: GB
   website: https://llm7.io
   openai_compatible: true
-  pricing:
-    model: free
-  rate_limits:
-    rpm: 30
-  models:
-  - deepseek-r1
-  - qwen2.5-coder
-  - +27 more
+  pricing: {model: free}
+  rate_limits: {rpm: 30}
+  models: [deepseek-r1, qwen2.5-coder, "+27 more"]
   status: active
+
 - slug: kluster
   name: Kluster AI
   category: inference-provider
@@ -303,14 +199,13 @@
   country: US
   website: https://kluster.ai
   openai_compatible: true
-  pricing:
-    model: freemium
-    free_tier: true
-  models:
-  - deepseek-r1
-  - llama-4-maverick
-  - qwen3-235b
+  pricing: {model: freemium, free_tier: true}
+  models: [deepseek-r1, llama-4-maverick, qwen3-235b]
   status: active
+
+# ============================================================
+# 1.5. INFERENCE PROVIDERS - TRIAL CREDITS
+# ============================================================
 - slug: together
   name: Together AI
   category: inference-provider
@@ -318,17 +213,11 @@
   country: US
   website: https://together.ai
   openai_compatible: true
-  pricing:
-    model: trial-credits
-    trial_credits_usd: 5
-  models:
-  - llama-3.3
-  - mixtral
-  - qwen-2.5
-  - deepseek-r1
-  tags:
-  - 200-models
+  pricing: {model: trial-credits, trial_credits_usd: 5}
+  models: [llama-3.3, mixtral, qwen-2.5, deepseek-r1]
+  tags: [200-models]
   status: active
+
 - slug: fireworks
   name: Fireworks AI
   category: inference-provider
@@ -336,16 +225,11 @@
   country: US
   website: https://fireworks.ai
   openai_compatible: true
-  pricing:
-    model: trial-credits
-    trial_credits_usd: 1
-  rate_limits:
-    rpm: 600
-  models:
-  - llama-3.3-70b
-  - qwen-2.5-72b
-  - deepseek-v3
+  pricing: {model: trial-credits, trial_credits_usd: 1}
+  rate_limits: {rpm: 600}
+  models: [llama-3.3-70b, qwen-2.5-72b, deepseek-v3]
   status: active
+
 - slug: deepinfra
   name: DeepInfra
   category: inference-provider
@@ -353,38 +237,29 @@
   country: US
   website: https://deepinfra.com
   openai_compatible: true
-  pricing:
-    model: pay-per-token
-    input_per_mtok_usd: 0.14
-    output_per_mtok_usd: 0.28
-  models:
-  - deepseek-v4-flash
-  - kimi-k2.6
-  - glm-5
-  - qwen3.5
-  - mimo-v2.5
-  tags:
-  - cheapest-deepseek
+  pricing: {model: pay-per-token, input_per_mtok_usd: 0.14, output_per_mtok_usd: 0.28}
+  models: [deepseek-v4-flash, kimi-k2.6, glm-5, qwen3.5, mimo-v2.5]
+  tags: [cheapest-deepseek]
   status: active
+
 - slug: baseten
   name: Baseten
   category: inference-provider
   subcategory: hosting
   country: US
   website: https://baseten.co
-  pricing:
-    model: trial-credits
-    trial_credits_usd: 30
+  pricing: {model: trial-credits, trial_credits_usd: 30}
   status: active
+
 - slug: nebius
   name: Nebius
   category: inference-provider
   subcategory: trial-credits
   country: NL
   website: https://nebius.ai
-  pricing:
-    model: trial-credits
+  pricing: {model: trial-credits}
   status: active
+
 - slug: novita
   name: Novita AI
   category: inference-provider
@@ -392,21 +267,19 @@
   country: SG
   website: https://novita.ai
   openai_compatible: true
-  pricing:
-    model: trial-credits
+  pricing: {model: trial-credits}
   status: active
+
 - slug: hyperbolic
   name: Hyperbolic
   category: inference-provider
   subcategory: trial-credits
   country: US
   website: https://hyperbolic.xyz
-  pricing:
-    model: trial-credits
-  models:
-  - llama-3.3
-  - deepseek
+  pricing: {model: trial-credits}
+  models: [llama-3.3, deepseek]
   status: active
+
 - slug: sambanova
   name: SambaNova Cloud
   category: inference-provider
@@ -414,14 +287,11 @@
   country: US
   website: https://cloud.sambanova.ai
   openai_compatible: true
-  pricing:
-    model: freemium
-    free_tier: true
-  models:
-  - llama-4
-  tags:
-  - rdu-chips
+  pricing: {model: freemium, free_tier: true}
+  models: [llama-4]
+  tags: [rdu-chips]
   status: active
+
 - slug: scaleway
   name: Scaleway Generative APIs
   category: inference-provider
@@ -429,69 +299,60 @@
   country: FR
   website: https://www.scaleway.com/en/generative-apis
   openai_compatible: true
-  pricing:
-    model: freemium
-    free_tier: true
+  pricing: {model: freemium, free_tier: true}
   status: active
+
 - slug: lepton
   name: Lepton AI
   category: inference-provider
   subcategory: trial-credits
   country: US
   website: https://lepton.ai
-  pricing:
-    model: trial-credits
-    trial_credits_usd: 10
+  pricing: {model: trial-credits, trial_credits_usd: 10}
   status: active
+
 - slug: avian
   name: Avian.io
   category: inference-provider
   subcategory: free-tier
   country: US
   website: https://avian.io
-  pricing:
-    model: freemium
-    free_tier: true
-  models:
-  - llama-3.1-405b
-  - qwen
+  pricing: {model: freemium, free_tier: true}
+  models: [llama-3.1-405b, qwen]
   status: active
+
 - slug: featherless
   name: Featherless AI
   category: inference-provider
   subcategory: subscription
   country: US
   website: https://featherless.ai
-  pricing:
-    model: subscription
-    monthly_usd: 10
-  models:
-  - 4000+ HF models
+  pricing: {model: subscription, monthly_usd: 10}
+  models: ["4000+ HF models"]
   status: active
+
 - slug: targon
   name: Targon (Bittensor)
   category: inference-provider
   subcategory: decentralized
   country: US
   website: https://targon.com
-  pricing:
-    model: freemium
-    free_tier: true
-  models:
-  - deepseek
-  - llama
-  tags:
-  - bittensor
-  - decentralized
+  pricing: {model: freemium, free_tier: true}
+  models: [deepseek, llama]
+  tags: [bittensor, decentralized]
   status: active
+
 - slug: chutes
   name: Chutes
   category: inference-provider
   subcategory: trial-credits
   website: https://chutes.ai
-  pricing:
-    model: trial-credits
+  pricing: {model: trial-credits}
   status: active
+
+# ============================================================
+# 1.6. CHINESE PROVIDERS
+# ============================================================
 - slug: deepseek
   name: DeepSeek Platform
   category: provider-api
@@ -499,20 +360,11 @@
   country: CN
   website: https://platform.deepseek.com
   openai_compatible: true
-  pricing:
-    model: pay-per-token
-    input_per_mtok_usd: 0.14
-    output_per_mtok_usd: 0.28
-  models:
-  - deepseek-v3.2
-  - deepseek-r1
-  - deepseek-v4-pro
-  - deepseek-v4-flash
-  tags:
-  - chinese
-  - mit-license
-  - 90-percent-cache-discount
+  pricing: {model: pay-per-token, input_per_mtok_usd: 0.14, output_per_mtok_usd: 0.28}
+  models: [deepseek-v3.2, deepseek-r1, deepseek-v4-pro, deepseek-v4-flash]
+  tags: [chinese, mit-license, 90-percent-cache-discount]
   status: active
+
 - slug: moonshot
   name: Moonshot AI (Kimi)
   category: provider-api
@@ -520,17 +372,11 @@
   country: CN
   website: https://platform.moonshot.cn
   openai_compatible: true
-  pricing:
-    model: freemium
-    trial_credits_usd: null
-  models:
-  - kimi-k2.5
-  - kimi-k2.6
-  - kimi-long-context
-  tags:
-  - chinese
-  - long-context
+  pricing: {model: freemium, trial_credits_usd: null}
+  models: [kimi-k2.5, kimi-k2.6, kimi-long-context]
+  tags: [chinese, long-context]
   status: active
+
 - slug: siliconflow
   name: SiliconFlow (硅基流动)
   category: inference-provider
@@ -538,22 +384,12 @@
   country: CN
   website: https://cloud.siliconflow.cn
   openai_compatible: true
-  pricing:
-    model: freemium
-    free_tier: true
-  rate_limits:
-    rpm: 1000
-    tpm: 50000
-  models:
-  - qwen3-8b
-  - deepseek-r1-distill
-  - glm-4.1v-9b
-  - deepseek-ocr-free
-  tags:
-  - chinese
-  - ¥14-credits
-  - qwen2.5-7b-free-forever
+  pricing: {model: freemium, free_tier: true}
+  rate_limits: {rpm: 1000, tpm: 50000}
+  models: [qwen3-8b, deepseek-r1-distill, glm-4.1v-9b, deepseek-ocr-free]
+  tags: [chinese, ¥14-credits, qwen2.5-7b-free-forever]
   status: active
+
 - slug: dashscope
   name: DashScope (Alibaba)
   category: provider-api
@@ -561,17 +397,11 @@
   country: CN
   website: https://dashscope.aliyun.com
   openai_compatible: true
-  pricing:
-    model: freemium
-    free_tier: true
-  models:
-  - qwen-max
-  - qwen-plus
-  - qwen-vl
-  - qwen3-235b
-  tags:
-  - 1m-tokens-free-per-model
+  pricing: {model: freemium, free_tier: true}
+  models: [qwen-max, qwen-plus, qwen-vl, qwen3-235b]
+  tags: [1m-tokens-free-per-model]
   status: active
+
 - slug: minimax
   name: MiniMax
   category: provider-api
@@ -579,82 +409,64 @@
   country: CN
   website: https://api.minimax.chat
   openai_compatible: true
-  pricing:
-    model: trial-credits
-  models:
-  - minimax-m2.5
-  - minimax-m2.1
-  - abab6.5
+  pricing: {model: trial-credits}
+  models: [minimax-m2.5, minimax-m2.1, abab6.5]
   status: active
+
 - slug: 01ai
   name: 01.AI (Yi / 零一万物)
   category: provider-api
   subcategory: chinese-cloud
   country: CN
   website: https://platform.01.ai
-  pricing:
-    model: trial-credits
-  models:
-  - yi-large
-  - yi-lightning
-  - yi-vision
+  pricing: {model: trial-credits}
+  models: [yi-large, yi-lightning, yi-vision]
   status: active
+
 - slug: stepfun
   name: StepFun (阶跃星辰)
   category: provider-api
   subcategory: chinese-cloud
   country: CN
   website: https://platform.stepfun.com
-  pricing:
-    model: trial-credits
-    input_per_mtok_usd: 0.1
-    output_per_mtok_usd: 0.3
-  models:
-  - step-3.5-flash
-  - step-2
+  pricing: {model: trial-credits, input_per_mtok_usd: 0.10, output_per_mtok_usd: 0.30}
+  models: [step-3.5-flash, step-2]
   status: active
+
 - slug: baidu-qianfan
   name: Baidu Qianfan (ERNIE)
   category: provider-api
   subcategory: chinese-cloud
   country: CN
   website: https://qianfan.cloud.baidu.com
-  pricing:
-    model: freemium
-    free_tier: true
-  models:
-  - ernie-4.0
-  - ernie-speed
-  tags:
-  - ernie-speed-free
+  pricing: {model: freemium, free_tier: true}
+  models: [ernie-4.0, ernie-speed]
+  tags: [ernie-speed-free]
   status: active
+
 - slug: tencent-hunyuan
   name: Tencent Hunyuan
   category: provider-api
   subcategory: chinese-cloud
   country: CN
   website: https://hunyuan.tencent.com
-  pricing:
-    model: freemium
-    free_tier: true
-  models:
-  - hunyuan-lite
-  - hunyuan-pro
-  - hunyuan-turbo
+  pricing: {model: freemium, free_tier: true}
+  models: [hunyuan-lite, hunyuan-pro, hunyuan-turbo]
   status: active
+
 - slug: internlm
   name: InternLM (Shanghai AI Lab)
   category: provider-api
   subcategory: chinese-cloud
   country: CN
   website: https://internlm.intern-ai.org.cn
-  pricing:
-    model: freemium
-    free_tier: true
-  models:
-  - internlm2.5
-  - internvl
+  pricing: {model: freemium, free_tier: true}
+  models: [internlm2.5, internvl]
   status: active
+
+# ============================================================
+# 1.7. PROPRIETARY API (paid only)
+# ============================================================
 - slug: openai-api
   name: OpenAI API
   category: provider-api
@@ -662,19 +474,10 @@
   country: US
   website: https://platform.openai.com
   openai_compatible: true
-  pricing:
-    model: pay-per-token
-    input_per_mtok_usd: 1.25
-    output_per_mtok_usd: 10.0
-  models:
-  - gpt-5
-  - gpt-5.1
-  - gpt-5.2
-  - gpt-5.4
-  - gpt-5.4-pro
-  - o3
-  - o3-pro
+  pricing: {model: pay-per-token, input_per_mtok_usd: 1.25, output_per_mtok_usd: 10.00}
+  models: [gpt-5, gpt-5.1, gpt-5.2, gpt-5.4, gpt-5.4-pro, o3, o3-pro]
   status: active
+
 - slug: anthropic-api
   name: Anthropic API
   category: provider-api
@@ -682,15 +485,10 @@
   country: US
   website: https://console.anthropic.com
   openai_compatible: false
-  pricing:
-    model: pay-per-token
-    input_per_mtok_usd: 3.0
-    output_per_mtok_usd: 15.0
-  models:
-  - claude-sonnet-4.6
-  - claude-opus-4.6
-  - claude-haiku-4
+  pricing: {model: pay-per-token, input_per_mtok_usd: 3.00, output_per_mtok_usd: 15.00}
+  models: [claude-sonnet-4.6, claude-opus-4.6, claude-haiku-4]
   status: active
+
 - slug: xai-grok
   name: xAI Grok API
   category: provider-api
@@ -698,16 +496,11 @@
   country: US
   website: https://console.x.ai
   openai_compatible: true
-  pricing:
-    model: pay-per-token
-    input_per_mtok_usd: 3.0
-    output_per_mtok_usd: 15.0
-  models:
-  - grok-3
-  - grok-2
-  tags:
-  - free-with-data-sharing
+  pricing: {model: pay-per-token, input_per_mtok_usd: 3.00, output_per_mtok_usd: 15.00}
+  models: [grok-3, grok-2]
+  tags: [free-with-data-sharing]
   status: active
+
 - slug: perplexity-api
   name: Perplexity Sonar API
   category: provider-api
@@ -715,500 +508,439 @@
   country: US
   website: https://docs.perplexity.ai
   openai_compatible: true
-  pricing:
-    model: pay-per-token
-    trial_credits_usd: 5
-  models:
-  - sonar
-  - sonar-pro
+  pricing: {model: pay-per-token, trial_credits_usd: 5}
+  models: [sonar, sonar-pro]
   status: active
+
 - slug: reka
   name: Reka AI
   category: provider-api
   subcategory: multimodal
   country: US
   website: https://reka.ai
-  pricing:
-    model: trial-credits
-  models:
-  - reka-core
-  - reka-flash
-  - reka-edge
+  pricing: {model: trial-credits}
+  models: [reka-core, reka-flash, reka-edge]
   status: active
+
+# ============================================================
+# 2. SUBSCRIPTION PLANS (do mais barato ao mais caro)
+# ============================================================
+
+# --- TIER 1: $5-15/mês ---
 - slug: elevenlabs-starter
   name: ElevenLabs Starter
   category: subscription-plan
   subcategory: tts
-  pricing:
-    model: subscription
-    monthly_usd: 5
+  pricing: {model: subscription, monthly_usd: 5}
   website: https://elevenlabs.io/pricing
   notes: 30K caracteres TTS/mês
   status: active
+
 - slug: suno-pro
   name: Suno Pro
   category: subscription-plan
   subcategory: music-gen
-  pricing:
-    model: subscription
-    monthly_usd: 10
+  pricing: {model: subscription, monthly_usd: 10}
   website: https://suno.com/pricing
   notes: 500 créditos diários
   status: active
+
 - slug: midjourney-basic
   name: Midjourney Basic
   category: subscription-plan
   subcategory: image-gen
-  pricing:
-    model: subscription
-    monthly_usd: 10
+  pricing: {model: subscription, monthly_usd: 10}
   website: https://midjourney.com
   notes: ~200 imagens/mês
   status: active
+
 - slug: github-copilot-pro
   name: GitHub Copilot Pro
   category: subscription-plan
   subcategory: coding
-  pricing:
-    model: subscription
-    monthly_usd: 10
+  pricing: {model: subscription, monthly_usd: 10}
   website: https://github.com/features/copilot
   notes: 300 premium req, multi-LLM (Claude Opus, GPT-5)
-  models:
-  - gpt-5
-  - claude-opus-4.6
-  - gemini-3
-  tags:
-  - best-value-coding
+  models: [gpt-5, claude-opus-4.6, gemini-3]
+  tags: [best-value-coding]
   status: active
+
 - slug: tabnine-pro
   name: Tabnine Pro
   category: subscription-plan
   subcategory: coding
-  pricing:
-    model: subscription
-    monthly_usd: 12
+  pricing: {model: subscription, monthly_usd: 12}
   website: https://www.tabnine.com/pricing
   notes: Code completion full-length, multi-LLM chat
   status: active
+
 - slug: leonardo-apprentice
   name: Leonardo.ai Apprentice
   category: subscription-plan
   subcategory: image-gen
-  pricing:
-    model: subscription
-    monthly_usd: 12
+  pricing: {model: subscription, monthly_usd: 12}
   website: https://leonardo.ai
   status: active
+
 - slug: descript-hobbyist
   name: Descript Hobbyist
   category: subscription-plan
   subcategory: audio-video-edit
-  pricing:
-    model: subscription
-    monthly_usd: 12
+  pricing: {model: subscription, monthly_usd: 12}
   website: https://descript.com
   notes: 10h transcrição/mês
   status: active
+
 - slug: runway-standard
   name: Runway Standard
   category: subscription-plan
   subcategory: video-gen
-  pricing:
-    model: subscription
-    monthly_usd: 15
+  pricing: {model: subscription, monthly_usd: 15}
   website: https://runwayml.com/pricing
   status: active
+
 - slug: windsurf-pro
   name: Windsurf Pro
   category: subscription-plan
   subcategory: coding
-  pricing:
-    model: subscription
-    monthly_usd: 15
+  pricing: {model: subscription, monthly_usd: 15}
   website: https://windsurf.com/pricing
   notes: 500 Flex credits, Opus 4.6/GPT-5/Gemini 3
-  models:
-  - claude-opus-4.6
-  - gpt-5.4
-  - gemini-3-pro
+  models: [claude-opus-4.6, gpt-5.4, gemini-3-pro]
   status: active
+
 - slug: mistral-le-chat-pro
   name: Mistral Le Chat Pro
   category: subscription-plan
   subcategory: consumer-chat
-  pricing:
-    model: subscription
-    monthly_usd: 15
+  pricing: {model: subscription, monthly_usd: 15}
   website: https://chat.mistral.ai
-  models:
-  - mistral-large-3
+  models: [mistral-large-3]
   status: active
+
 - slug: augment-indie
   name: Augment Code Indie
   category: subscription-plan
   subcategory: coding
-  pricing:
-    model: subscription
-    monthly_usd: 15
+  pricing: {model: subscription, monthly_usd: 15}
   website: https://augmentcode.com
   status: active
+
 - slug: writesonic
   name: Writesonic
   category: subscription-plan
   subcategory: content-gen
-  pricing:
-    model: subscription
-    monthly_usd: 16
+  pricing: {model: subscription, monthly_usd: 16}
   website: https://writesonic.com
   status: active
+
+# --- TIER 2: $19-30/mês ---
 - slug: github-copilot-business
   name: GitHub Copilot Business
   category: subscription-plan
   subcategory: coding
-  pricing:
-    model: subscription
-    monthly_usd: 19
+  pricing: {model: subscription, monthly_usd: 19}
   website: https://github.com/features/copilot
   status: active
+
 - slug: amazon-q-pro
   name: Amazon Q Developer Pro
   category: subscription-plan
   subcategory: coding
-  pricing:
-    model: subscription
-    monthly_usd: 19
+  pricing: {model: subscription, monthly_usd: 19}
   website: https://aws.amazon.com/q/developer
   status: active
+
 - slug: notebooklm-plus
   name: NotebookLM Plus
   category: subscription-plan
   subcategory: research
-  pricing:
-    model: subscription
-    monthly_usd: 19.99
+  pricing: {model: subscription, monthly_usd: 19.99}
   website: https://notebooklm.google
   status: active
+
 - slug: chatgpt-plus
   name: ChatGPT Plus
   category: subscription-plan
   subcategory: consumer-chat
-  pricing:
-    model: subscription
-    monthly_usd: 20
+  pricing: {model: subscription, monthly_usd: 20}
   website: https://chatgpt.com
-  models:
-  - gpt-5.4
-  - codex
-  - dall-e-3
+  models: [gpt-5.4, codex, dall-e-3]
   notes: GPT-5.4, Codex, Voice, Custom GPTs
   status: active
+
 - slug: claude-pro
   name: Claude Pro
   category: subscription-plan
   subcategory: consumer-chat
-  pricing:
-    model: subscription
-    monthly_usd: 20
+  pricing: {model: subscription, monthly_usd: 20}
   website: https://claude.ai
-  models:
-  - claude-opus-4.6
-  - claude-sonnet-4.6
+  models: [claude-opus-4.6, claude-sonnet-4.6]
   notes: 5x usage free, Projects
   status: active
+
 - slug: gemini-advanced
   name: Gemini Advanced
   category: subscription-plan
   subcategory: consumer-chat
-  pricing:
-    model: subscription
-    monthly_usd: 20
+  pricing: {model: subscription, monthly_usd: 20}
   website: https://gemini.google.com
-  models:
-  - gemini-3-pro
+  models: [gemini-3-pro]
   notes: 2TB Drive + Veo
   status: active
+
 - slug: perplexity-pro
   name: Perplexity Pro
   category: subscription-plan
   subcategory: search-ai
-  pricing:
-    model: subscription
-    monthly_usd: 20
+  pricing: {model: subscription, monthly_usd: 20}
   website: https://perplexity.ai/pro
   status: active
+
 - slug: cursor-pro
   name: Cursor Pro
   category: subscription-plan
   subcategory: coding
-  pricing:
-    model: subscription
-    monthly_usd: 20
+  pricing: {model: subscription, monthly_usd: 20}
   website: https://cursor.com/pricing
-  models:
-  - claude-opus-4.6
-  - gpt-5.4
-  - gemini-3-pro
+  models: [claude-opus-4.6, gpt-5.4, gemini-3-pro]
   notes: Frontier models, Cloud agents, MCPs
   status: active
+
 - slug: v0-premium
   name: v0 Premium (Vercel)
   category: subscription-plan
   subcategory: coding
-  pricing:
-    model: subscription
-    monthly_usd: 20
+  pricing: {model: subscription, monthly_usd: 20}
   website: https://v0.dev
   status: active
+
 - slug: lovable
   name: Lovable
   category: subscription-plan
   subcategory: coding
-  pricing:
-    model: subscription
-    monthly_usd: 20
+  pricing: {model: subscription, monthly_usd: 20}
   website: https://lovable.dev
   status: active
+
 - slug: claude-code-pro
   name: Claude Code Pro
   category: subscription-plan
   subcategory: coding
-  pricing:
-    model: subscription
-    monthly_usd: 20
+  pricing: {model: subscription, monthly_usd: 20}
   website: https://www.anthropic.com/claude-code
   status: active
+
 - slug: grok-premium
   name: Grok Premium (X)
   category: subscription-plan
   subcategory: consumer-chat
-  pricing:
-    model: subscription
-    monthly_usd: 22
+  pricing: {model: subscription, monthly_usd: 22}
   website: https://x.com/i/grok
-  models:
-  - grok-3
+  models: [grok-3]
   status: active
+
 - slug: heygen-creator
   name: HeyGen Creator
   category: subscription-plan
   subcategory: video-avatar
-  pricing:
-    model: subscription
-    monthly_usd: 29
+  pricing: {model: subscription, monthly_usd: 29}
   website: https://heygen.com
   status: active
+
 - slug: synthesia-starter
   name: Synthesia Starter
   category: subscription-plan
   subcategory: video-avatar
-  pricing:
-    model: subscription
-    monthly_usd: 29
+  pricing: {model: subscription, monthly_usd: 29}
   website: https://synthesia.io
   status: active
+
 - slug: midjourney-standard
   name: Midjourney Standard
   category: subscription-plan
   subcategory: image-gen
-  pricing:
-    model: subscription
-    monthly_usd: 30
+  pricing: {model: subscription, monthly_usd: 30}
   website: https://midjourney.com
   status: active
+
+# --- TIER 3: $40-100/mês ---
 - slug: tabnine-enterprise
   name: Tabnine Enterprise
   category: subscription-plan
   subcategory: coding
-  pricing:
-    model: subscription
-    monthly_usd: 39
+  pricing: {model: subscription, monthly_usd: 39}
   website: https://www.tabnine.com/pricing
   notes: Self-host VPC/on-prem
   status: active
+
 - slug: github-copilot-enterprise
   name: GitHub Copilot Enterprise
   category: subscription-plan
   subcategory: coding
-  pricing:
-    model: subscription
-    monthly_usd: 39
+  pricing: {model: subscription, monthly_usd: 39}
   website: https://github.com/features/copilot
   status: active
+
 - slug: cursor-teams
   name: Cursor Teams
   category: subscription-plan
   subcategory: coding
-  pricing:
-    model: subscription
-    monthly_usd: 40
+  pricing: {model: subscription, monthly_usd: 40}
   website: https://cursor.com/pricing
   status: active
+
 - slug: jasper-creator
   name: Jasper Creator
   category: subscription-plan
   subcategory: content-gen
-  pricing:
-    model: subscription
-    monthly_usd: 49
+  pricing: {model: subscription, monthly_usd: 49}
   website: https://jasper.ai
   status: active
+
 - slug: copyai-pro
   name: Copy.ai Pro
   category: subscription-plan
   subcategory: content-gen
-  pricing:
-    model: subscription
-    monthly_usd: 49
+  pricing: {model: subscription, monthly_usd: 49}
   website: https://copy.ai
   status: active
+
 - slug: cursor-pro-plus
   name: Cursor Pro+
   category: subscription-plan
   subcategory: coding
-  pricing:
-    model: subscription
-    monthly_usd: 60
+  pricing: {model: subscription, monthly_usd: 60}
   website: https://cursor.com/pricing
   notes: 3x usage Claude/GPT/Gemini
   status: active
+
 - slug: windsurf-team
   name: Windsurf Team
   category: subscription-plan
   subcategory: coding
-  pricing:
-    model: subscription
-    monthly_usd: 100
+  pricing: {model: subscription, monthly_usd: 100}
   website: https://windsurf.com/pricing
   notes: 1500 credits/user, SSO
   status: active
+
 - slug: chatgpt-pro-100
   name: ChatGPT Pro (new)
   category: subscription-plan
   subcategory: consumer-chat
-  pricing:
-    model: subscription
-    monthly_usd: 100
+  pricing: {model: subscription, monthly_usd: 100}
   website: https://chatgpt.com
   notes: 5x Plus, 10x Codex
   status: active
+
 - slug: claude-max-5x
   name: Claude Max 5x
   category: subscription-plan
   subcategory: consumer-chat
-  pricing:
-    model: subscription
-    monthly_usd: 100
+  pricing: {model: subscription, monthly_usd: 100}
   website: https://claude.ai
   status: active
+
+# --- TIER 4: $200+/mês ---
 - slug: chatgpt-pro-200
   name: ChatGPT Pro (original)
   category: subscription-plan
   subcategory: consumer-chat
-  pricing:
-    model: subscription
-    monthly_usd: 200
+  pricing: {model: subscription, monthly_usd: 200}
   website: https://chatgpt.com
   notes: 20x Plus, Sora, exclusive Pro models
   status: active
+
 - slug: claude-max-20x
   name: Claude Max 20x
   category: subscription-plan
   subcategory: consumer-chat
-  pricing:
-    model: subscription
-    monthly_usd: 200
+  pricing: {model: subscription, monthly_usd: 200}
   website: https://claude.ai
   status: active
+
 - slug: cursor-ultra
   name: Cursor Ultra
   category: subscription-plan
   subcategory: coding
-  pricing:
-    model: subscription
-    monthly_usd: 200
+  pricing: {model: subscription, monthly_usd: 200}
   website: https://cursor.com/pricing
   status: active
+
 - slug: windsurf-max
   name: Windsurf Max
   category: subscription-plan
   subcategory: coding
-  pricing:
-    model: subscription
-    monthly_usd: 200
+  pricing: {model: subscription, monthly_usd: 200}
   website: https://windsurf.com/pricing
   notes: Unlimited credits, 1M context
   status: active
+
 - slug: gemini-ultra
   name: Gemini Ultra
   category: subscription-plan
   subcategory: consumer-chat
-  pricing:
-    model: subscription
-    monthly_usd: 250
+  pricing: {model: subscription, monthly_usd: 250}
   website: https://gemini.google.com
-  models:
-  - gemini-3-pro-deep-think
+  models: [gemini-3-pro-deep-think]
   status: active
+
 - slug: devin
   name: Devin (Cognition AI)
   category: subscription-plan
   subcategory: autonomous-agent
-  pricing:
-    model: subscription
-    monthly_usd: 500
+  pricing: {model: subscription, monthly_usd: 500}
   website: https://devin.ai
   notes: Autonomous coding agent
   status: active
+
+# --- Enterprise ---
 - slug: openai-enterprise
   name: OpenAI Enterprise
   category: subscription-plan
   subcategory: enterprise
-  pricing:
-    model: subscription
-    monthly_usd: null
+  pricing: {model: subscription, monthly_usd: null}
   website: https://openai.com/enterprise
   notes: Custom pricing, SOC2
   status: active
+
 - slug: anthropic-enterprise
   name: Anthropic Enterprise
   category: subscription-plan
   subcategory: enterprise
-  pricing:
-    model: subscription
-    monthly_usd: null
+  pricing: {model: subscription, monthly_usd: null}
   website: https://anthropic.com/enterprise
   status: active
+
 - slug: aws-bedrock
   name: AWS Bedrock
   category: subscription-plan
   subcategory: enterprise
-  pricing:
-    model: pay-per-token
+  pricing: {model: pay-per-token}
   website: https://aws.amazon.com/bedrock
-  models:
-  - claude
-  - llama
-  - mistral
-  - cohere
+  models: [claude, llama, mistral, cohere]
   notes: Multi-modelo via AWS
   status: active
+
 - slug: azure-openai
   name: Azure OpenAI
   category: subscription-plan
   subcategory: enterprise
-  pricing:
-    model: pay-per-token
+  pricing: {model: pay-per-token}
   website: https://azure.microsoft.com/en-us/products/ai-services/openai-service
   status: active
+
 - slug: vertex-ai
   name: Google Vertex AI
   category: subscription-plan
   subcategory: enterprise
-  pricing:
-    model: pay-per-token
+  pricing: {model: pay-per-token}
   website: https://cloud.google.com/vertex-ai
   status: active
+
+# ============================================================
+# 3. INFERENCE ENGINES (OPEN-SOURCE)
+# ============================================================
 - slug: vllm
   name: vLLM
   category: inference-engine
@@ -1218,13 +950,10 @@
   github: https://github.com/vllm-project/vllm
   website: https://vllm.ai
   openai_compatible: true
-  pricing:
-    model: self-hosted
-  tags:
-  - paged-attention
-  - continuous-batching
-  - multi-gpu
+  pricing: {model: self-hosted}
+  tags: [paged-attention, continuous-batching, multi-gpu]
   status: active
+
 - slug: ollama
   name: Ollama
   category: inference-engine
@@ -1234,12 +963,10 @@
   github: https://github.com/ollama/ollama
   website: https://ollama.com
   openai_compatible: true
-  pricing:
-    model: self-hosted
-  tags:
-  - easy-setup
-  - llama-cpp-wrapper
+  pricing: {model: self-hosted}
+  tags: [easy-setup, llama-cpp-wrapper]
   status: active
+
 - slug: llama-cpp
   name: llama.cpp
   category: inference-engine
@@ -1249,14 +976,10 @@
   github: https://github.com/ggml-org/llama.cpp
   website: https://github.com/ggml-org/llama.cpp
   openai_compatible: true
-  pricing:
-    model: self-hosted
-  tags:
-  - gguf
-  - cpu
-  - edge
-  - mobile
+  pricing: {model: self-hosted}
+  tags: [gguf, cpu, edge, mobile]
   status: active
+
 - slug: tgi
   name: Text Generation Inference (TGI)
   category: inference-engine
@@ -1266,12 +989,10 @@
   github: https://github.com/huggingface/text-generation-inference
   website: https://huggingface.co/docs/text-generation-inference
   openai_compatible: true
-  pricing:
-    model: self-hosted
-  tags:
-  - huggingface
-  - rust
+  pricing: {model: self-hosted}
+  tags: [huggingface, rust]
   status: active
+
 - slug: sglang
   name: SGLang
   category: inference-engine
@@ -1281,13 +1002,10 @@
   github: https://github.com/sgl-project/sglang
   website: https://sgl-project.github.io
   openai_compatible: true
-  pricing:
-    model: self-hosted
-  tags:
-  - reasoning
-  - structured-output
-  - deepseek-r1-best
+  pricing: {model: self-hosted}
+  tags: [reasoning, structured-output, deepseek-r1-best]
   status: active
+
 - slug: tensorrt-llm
   name: TensorRT-LLM
   category: inference-engine
@@ -1297,12 +1015,10 @@
   github: https://github.com/NVIDIA/TensorRT-LLM
   website: https://nvidia.github.io/TensorRT-LLM
   openai_compatible: true
-  pricing:
-    model: self-hosted
-  tags:
-  - nvidia-only
-  - max-throughput
+  pricing: {model: self-hosted}
+  tags: [nvidia-only, max-throughput]
   status: active
+
 - slug: localai
   name: LocalAI
   category: inference-engine
@@ -1312,12 +1028,10 @@
   github: https://github.com/mudler/LocalAI
   website: https://localai.io
   openai_compatible: true
-  pricing:
-    model: self-hosted
-  tags:
-  - drop-in-openai
-  - text-image-audio-tts
+  pricing: {model: self-hosted}
+  tags: [drop-in-openai, text-image-audio-tts]
   status: active
+
 - slug: lmdeploy
   name: LMDeploy
   category: inference-engine
@@ -1327,9 +1041,9 @@
   github: https://github.com/InternLM/lmdeploy
   website: https://lmdeploy.readthedocs.io
   openai_compatible: true
-  pricing:
-    model: self-hosted
+  pricing: {model: self-hosted}
   status: active
+
 - slug: mlc-llm
   name: MLC-LLM
   category: inference-engine
@@ -1338,13 +1052,10 @@
   license: Apache-2.0
   github: https://github.com/mlc-ai/mlc-llm
   website: https://llm.mlc.ai
-  pricing:
-    model: self-hosted
-  tags:
-  - web
-  - mobile
-  - edge
+  pricing: {model: self-hosted}
+  tags: [web, mobile, edge]
   status: active
+
 - slug: ktransformers
   name: KTransformers
   category: inference-engine
@@ -1353,12 +1064,10 @@
   license: Apache-2.0
   github: https://github.com/kvcache-ai/ktransformers
   website: https://kvcache-ai.github.io/ktransformers
-  pricing:
-    model: self-hosted
-  tags:
-  - cpu-gpu-hybrid
-  - moe
+  pricing: {model: self-hosted}
+  tags: [cpu-gpu-hybrid, moe]
   status: active
+
 - slug: exllamav2
   name: ExLlamaV2
   category: inference-engine
@@ -1367,9 +1076,9 @@
   license: MIT
   github: https://github.com/turboderp-org/exllamav2
   website: https://github.com/turboderp-org/exllamav2
-  pricing:
-    model: self-hosted
+  pricing: {model: self-hosted}
   status: active
+
 - slug: aphrodite
   name: Aphrodite Engine
   category: inference-engine
@@ -1379,11 +1088,10 @@
   github: https://github.com/aphrodite-engine/aphrodite-engine
   website: https://aphrodite.pygmalion.chat
   openai_compatible: true
-  pricing:
-    model: self-hosted
-  tags:
-  - vllm-fork
+  pricing: {model: self-hosted}
+  tags: [vllm-fork]
   status: active
+
 - slug: ctranslate2
   name: CTranslate2
   category: inference-engine
@@ -1392,9 +1100,12 @@
   license: MIT
   github: https://github.com/OpenNMT/CTranslate2
   website: https://opennmt.net/CTranslate2
-  pricing:
-    model: self-hosted
+  pricing: {model: self-hosted}
   status: active
+
+# ============================================================
+# 4. DESKTOP UIs / CHAT CLIENTS
+# ============================================================
 - slug: open-webui
   name: Open WebUI
   category: desktop-ui
@@ -1402,13 +1113,10 @@
   license: MIT
   github: https://github.com/open-webui/open-webui
   website: https://openwebui.com
-  pricing:
-    model: self-hosted
-  tags:
-  - ollama
-  - openai-compat
-  - full-ui
+  pricing: {model: self-hosted}
+  tags: [ollama, openai-compat, full-ui]
   status: active
+
 - slug: text-gen-webui
   name: Text Generation WebUI
   category: desktop-ui
@@ -1416,12 +1124,10 @@
   license: AGPL-3.0
   github: https://github.com/oobabooga/text-generation-webui
   website: https://github.com/oobabooga/text-generation-webui
-  pricing:
-    model: self-hosted
-  tags:
-  - gradio
-  - multi-backend
+  pricing: {model: self-hosted}
+  tags: [gradio, multi-backend]
   status: active
+
 - slug: jan
   name: Jan
   category: desktop-ui
@@ -1429,12 +1135,10 @@
   license: AGPL-3.0
   github: https://github.com/menloresearch/jan
   website: https://jan.ai
-  pricing:
-    model: self-hosted
-  tags:
-  - chatgpt-alternative
-  - desktop
+  pricing: {model: self-hosted}
+  tags: [chatgpt-alternative, desktop]
   status: active
+
 - slug: gpt4all
   name: GPT4All
   category: desktop-ui
@@ -1442,21 +1146,19 @@
   license: MIT
   github: https://github.com/nomic-ai/gpt4all
   website: https://gpt4all.io
-  pricing:
-    model: self-hosted
+  pricing: {model: self-hosted}
   status: active
+
 - slug: lm-studio
   name: LM Studio
   category: desktop-ui
   open_source: false
   license: Proprietary-Free
   website: https://lmstudio.ai
-  pricing:
-    model: free
-  tags:
-  - desktop
-  - easy
+  pricing: {model: free}
+  tags: [desktop, easy]
   status: active
+
 - slug: koboldcpp
   name: KoboldCpp
   category: desktop-ui
@@ -1464,12 +1166,13 @@
   license: AGPL-3.0
   github: https://github.com/LostRuins/koboldcpp
   website: https://github.com/LostRuins/koboldcpp
-  pricing:
-    model: self-hosted
-  tags:
-  - roleplay
-  - writing
+  pricing: {model: self-hosted}
+  tags: [roleplay, writing]
   status: active
+
+# ============================================================
+# 5. GATEWAYS / ROUTERS / PROXIES
+# ============================================================
 - slug: litellm
   name: LiteLLM
   category: gateway
@@ -1478,12 +1181,10 @@
   license: MIT
   github: https://github.com/BerriAI/litellm
   website: https://litellm.ai
-  pricing:
-    model: self-hosted
-  tags:
-  - 100-providers
-  - openai-format-unified
+  pricing: {model: self-hosted}
+  tags: [100-providers, openai-format-unified]
   status: active
+
 - slug: portkey
   name: Portkey AI Gateway
   category: gateway
@@ -1492,12 +1193,10 @@
   license: MIT
   github: https://github.com/Portkey-AI/gateway
   website: https://portkey.ai
-  pricing:
-    model: freemium
-  tags:
-  - fallbacks
-  - retries
+  pricing: {model: freemium}
+  tags: [fallbacks, retries]
   status: active
+
 - slug: one-api
   name: OneAPI
   category: gateway
@@ -1506,12 +1205,10 @@
   license: MIT
   github: https://github.com/songquanpeng/one-api
   website: https://github.com/songquanpeng/one-api
-  pricing:
-    model: self-hosted
-  tags:
-  - chinese-popular
-  - multi-provider
+  pricing: {model: self-hosted}
+  tags: [chinese-popular, multi-provider]
   status: active
+
 - slug: new-api
   name: NewAPI
   category: gateway
@@ -1520,11 +1217,10 @@
   license: Apache-2.0
   github: https://github.com/Calcium-Ion/new-api
   website: https://github.com/Calcium-Ion/new-api
-  pricing:
-    model: self-hosted
-  tags:
-  - oneapi-fork-active
+  pricing: {model: self-hosted}
+  tags: [oneapi-fork-active]
   status: active
+
 - slug: helicone
   name: Helicone
   category: gateway
@@ -1533,9 +1229,9 @@
   license: Apache-2.0
   github: https://github.com/Helicone/helicone
   website: https://helicone.ai
-  pricing:
-    model: freemium
+  pricing: {model: freemium}
   status: active
+
 - slug: langfuse
   name: Langfuse
   category: gateway
@@ -1544,9 +1240,9 @@
   license: MIT
   github: https://github.com/langfuse/langfuse
   website: https://langfuse.com
-  pricing:
-    model: freemium
+  pricing: {model: freemium}
   status: active
+
 - slug: routellm
   name: RouteLLM
   category: gateway
@@ -1555,11 +1251,10 @@
   license: Apache-2.0
   github: https://github.com/lm-sys/RouteLLM
   website: https://lmsys.org/blog/2024-07-01-routellm
-  pricing:
-    model: self-hosted
-  tags:
-  - cost-quality-routing
+  pricing: {model: self-hosted}
+  tags: [cost-quality-routing]
   status: active
+
 - slug: phoenix
   name: Arize Phoenix
   category: gateway
@@ -1568,9 +1263,12 @@
   license: Elastic-2.0
   github: https://github.com/Arize-ai/phoenix
   website: https://docs.arize.com/phoenix
-  pricing:
-    model: self-hosted
+  pricing: {model: self-hosted}
   status: active
+
+# ============================================================
+# 6. AGENT FRAMEWORKS / LLM SDKs
+# ============================================================
 - slug: langchain
   name: LangChain
   category: llm-framework
@@ -1578,9 +1276,9 @@
   license: MIT
   github: https://github.com/langchain-ai/langchain
   website: https://langchain.com
-  pricing:
-    model: self-hosted
+  pricing: {model: self-hosted}
   status: active
+
 - slug: llamaindex
   name: LlamaIndex
   category: llm-framework
@@ -1589,9 +1287,9 @@
   license: MIT
   github: https://github.com/run-llama/llama_index
   website: https://llamaindex.ai
-  pricing:
-    model: self-hosted
+  pricing: {model: self-hosted}
   status: active
+
 - slug: haystack
   name: Haystack
   category: llm-framework
@@ -1600,9 +1298,9 @@
   license: Apache-2.0
   github: https://github.com/deepset-ai/haystack
   website: https://haystack.deepset.ai
-  pricing:
-    model: self-hosted
+  pricing: {model: self-hosted}
   status: active
+
 - slug: crewai
   name: CrewAI
   category: agent-framework
@@ -1611,9 +1309,9 @@
   license: MIT
   github: https://github.com/crewAIInc/crewAI
   website: https://crewai.com
-  pricing:
-    model: self-hosted
+  pricing: {model: self-hosted}
   status: active
+
 - slug: autogen
   name: AutoGen
   category: agent-framework
@@ -1622,11 +1320,10 @@
   license: Apache-2.0
   github: https://github.com/microsoft/autogen
   website: https://microsoft.github.io/autogen
-  pricing:
-    model: self-hosted
-  tags:
-  - microsoft
+  pricing: {model: self-hosted}
+  tags: [microsoft]
   status: active
+
 - slug: langgraph
   name: LangGraph
   category: agent-framework
@@ -1635,9 +1332,9 @@
   license: MIT
   github: https://github.com/langchain-ai/langgraph
   website: https://langchain-ai.github.io/langgraph
-  pricing:
-    model: self-hosted
+  pricing: {model: self-hosted}
   status: active
+
 - slug: pydantic-ai
   name: Pydantic AI
   category: agent-framework
@@ -1646,9 +1343,9 @@
   license: MIT
   github: https://github.com/pydantic/pydantic-ai
   website: https://ai.pydantic.dev
-  pricing:
-    model: self-hosted
+  pricing: {model: self-hosted}
   status: active
+
 - slug: dspy
   name: DSPy
   category: llm-framework
@@ -1657,11 +1354,10 @@
   license: MIT
   github: https://github.com/stanfordnlp/dspy
   website: https://dspy.ai
-  pricing:
-    model: self-hosted
-  tags:
-  - stanford
+  pricing: {model: self-hosted}
+  tags: [stanford]
   status: active
+
 - slug: semantic-kernel
   name: Semantic Kernel
   category: llm-framework
@@ -1669,13 +1365,10 @@
   license: MIT
   github: https://github.com/microsoft/semantic-kernel
   website: https://learn.microsoft.com/semantic-kernel
-  pricing:
-    model: self-hosted
-  tags:
-  - microsoft
-  - dotnet
-  - python
+  pricing: {model: self-hosted}
+  tags: [microsoft, dotnet, python]
   status: active
+
 - slug: mastra
   name: Mastra
   category: agent-framework
@@ -1684,9 +1377,9 @@
   license: Apache-2.0
   github: https://github.com/mastra-ai/mastra
   website: https://mastra.ai
-  pricing:
-    model: self-hosted
+  pricing: {model: self-hosted}
   status: active
+
 - slug: vercel-ai-sdk
   name: Vercel AI SDK
   category: llm-framework
@@ -1695,9 +1388,12 @@
   license: Apache-2.0
   github: https://github.com/vercel/ai
   website: https://sdk.vercel.ai
-  pricing:
-    model: free
+  pricing: {model: free}
   status: active
+
+# ============================================================
+# 7. CODING AGENTS (OSS)
+# ============================================================
 - slug: aider
   name: Aider
   category: coding-tool
@@ -1706,12 +1402,10 @@
   license: Apache-2.0
   github: https://github.com/Aider-AI/aider
   website: https://aider.chat
-  pricing:
-    model: self-hosted
-  tags:
-  - byok
-  - cli
+  pricing: {model: self-hosted}
+  tags: [byok, cli]
   status: active
+
 - slug: cline
   name: Cline
   category: coding-tool
@@ -1720,9 +1414,9 @@
   license: Apache-2.0
   github: https://github.com/cline/cline
   website: https://cline.bot
-  pricing:
-    model: self-hosted
+  pricing: {model: self-hosted}
   status: active
+
 - slug: openhands
   name: OpenHands
   category: coding-tool
@@ -1731,11 +1425,10 @@
   license: MIT
   github: https://github.com/All-Hands-AI/OpenHands
   website: https://www.all-hands.dev
-  pricing:
-    model: self-hosted
-  tags:
-  - devin-alternative
+  pricing: {model: self-hosted}
+  tags: [devin-alternative]
   status: active
+
 - slug: continue
   name: Continue.dev
   category: coding-tool
@@ -1744,9 +1437,9 @@
   license: Apache-2.0
   github: https://github.com/continuedev/continue
   website: https://continue.dev
-  pricing:
-    model: self-hosted
+  pricing: {model: self-hosted}
   status: active
+
 - slug: codex-cli
   name: Codex CLI
   category: coding-tool
@@ -1755,49 +1448,50 @@
   license: Apache-2.0
   github: https://github.com/openai/codex
   website: https://github.com/openai/codex
-  pricing:
-    model: self-hosted
+  pricing: {model: self-hosted}
   status: active
+
+# ============================================================
+# 8. SPECIALTY APIs
+# ============================================================
+
+# --- TTS ---
 - slug: elevenlabs
   name: ElevenLabs
   category: specialty-api
   subcategory: tts
   country: US
   website: https://elevenlabs.io
-  pricing:
-    model: freemium
-    free_tier: true
-    monthly_usd: null
+  pricing: {model: freemium, free_tier: true, monthly_usd: null}
   notes: 10K chars/mês free
   status: active
+
 - slug: playht
   name: PlayHT
   category: specialty-api
   subcategory: tts
   website: https://play.ht
-  pricing:
-    model: freemium
-    free_tier: true
+  pricing: {model: freemium, free_tier: true}
   notes: 12.5K chars/mês free
   status: active
+
 - slug: cartesia
   name: Cartesia (Sonic)
   category: specialty-api
   subcategory: tts
   website: https://cartesia.ai
-  pricing:
-    model: freemium
-    free_tier: true
+  pricing: {model: freemium, free_tier: true}
   notes: 10K chars/mês free
   status: active
+
 - slug: resemble
   name: Resemble AI
   category: specialty-api
   subcategory: tts
   website: https://resemble.ai
-  pricing:
-    model: trial-credits
+  pricing: {model: trial-credits}
   status: active
+
 - slug: coqui-tts
   name: Coqui XTTS
   category: specialty-api
@@ -1806,9 +1500,9 @@
   license: CPML
   github: https://github.com/coqui-ai/TTS
   website: https://github.com/coqui-ai/TTS
-  pricing:
-    model: self-hosted
+  pricing: {model: self-hosted}
   status: active
+
 - slug: kokoro
   name: Kokoro TTS
   category: specialty-api
@@ -1817,30 +1511,27 @@
   license: Apache-2.0
   github: https://github.com/hexgrad/kokoro
   website: https://github.com/hexgrad/kokoro
-  pricing:
-    model: self-hosted
-  tags:
-  - oss
-  - lightweight
+  pricing: {model: self-hosted}
+  tags: [oss, lightweight]
   status: active
+
+# --- STT ---
 - slug: deepgram
   name: Deepgram
   category: specialty-api
   subcategory: stt
   website: https://deepgram.com
-  pricing:
-    model: trial-credits
-    trial_credits_usd: 200
+  pricing: {model: trial-credits, trial_credits_usd: 200}
   status: active
+
 - slug: assemblyai
   name: AssemblyAI
   category: specialty-api
   subcategory: stt
   website: https://assemblyai.com
-  pricing:
-    model: trial-credits
-    trial_credits_usd: 50
+  pricing: {model: trial-credits, trial_credits_usd: 50}
   status: active
+
 - slug: whisper
   name: Whisper
   category: specialty-api
@@ -1849,9 +1540,9 @@
   license: MIT
   github: https://github.com/openai/whisper
   website: https://openai.com/research/whisper
-  pricing:
-    model: self-hosted
+  pricing: {model: self-hosted}
   status: active
+
 - slug: faster-whisper
   name: faster-whisper
   category: specialty-api
@@ -1860,75 +1551,71 @@
   license: MIT
   github: https://github.com/SYSTRAN/faster-whisper
   website: https://github.com/SYSTRAN/faster-whisper
-  pricing:
-    model: self-hosted
+  pricing: {model: self-hosted}
   status: active
+
+# --- Embeddings/Rerank ---
 - slug: voyage
   name: Voyage AI
   category: specialty-api
   subcategory: embeddings
   website: https://voyageai.com
-  pricing:
-    model: freemium
-    free_tier: true
+  pricing: {model: freemium, free_tier: true}
   notes: 50M tokens free
   status: active
+
 - slug: jina
   name: Jina AI
   category: specialty-api
   subcategory: embeddings
   website: https://jina.ai
-  pricing:
-    model: freemium
-    free_tier: true
+  pricing: {model: freemium, free_tier: true}
   notes: 1M tokens free
   status: active
+
 - slug: mixedbread
   name: Mixedbread
   category: specialty-api
   subcategory: embeddings
   country: DE
   website: https://mixedbread.ai
-  pricing:
-    model: freemium
-    free_tier: true
+  pricing: {model: freemium, free_tier: true}
   status: active
+
 - slug: nomic
   name: Nomic Atlas
   category: specialty-api
   subcategory: embeddings
   website: https://atlas.nomic.ai
-  pricing:
-    model: freemium
-    free_tier: true
+  pricing: {model: freemium, free_tier: true}
   status: active
+
+# --- Image Gen ---
 - slug: fal
   name: fal.ai
   category: specialty-api
   subcategory: image-gen
   website: https://fal.ai
-  pricing:
-    model: trial-credits
+  pricing: {model: trial-credits}
   status: active
+
 - slug: pollinations
   name: Pollinations
   category: specialty-api
   subcategory: image-gen
   website: https://pollinations.ai
-  pricing:
-    model: free
-  tags:
-  - no-auth
+  pricing: {model: free}
+  tags: [no-auth]
   status: active
+
 - slug: replicate
   name: Replicate
   category: specialty-api
   subcategory: multimodal
   website: https://replicate.com
-  pricing:
-    model: trial-credits
-    trial_credits_usd: 0.5
+  pricing: {model: trial-credits, trial_credits_usd: 0.50}
   status: active
+
 - slug: comfyui
   name: ComfyUI
   category: specialty-api
@@ -1937,9 +1624,9 @@
   license: GPL-3.0
   github: https://github.com/comfyanonymous/ComfyUI
   website: https://www.comfy.org
-  pricing:
-    model: self-hosted
+  pricing: {model: self-hosted}
   status: active
+
 - slug: a1111-webui
   name: AUTOMATIC1111 WebUI
   category: specialty-api
@@ -1948,37 +1635,39 @@
   license: AGPL-3.0
   github: https://github.com/AUTOMATIC1111/stable-diffusion-webui
   website: https://github.com/AUTOMATIC1111/stable-diffusion-webui
-  pricing:
-    model: self-hosted
+  pricing: {model: self-hosted}
   status: active
+
+# --- Video Gen ---
 - slug: runway
   name: Runway
   category: specialty-api
   subcategory: video-gen
   website: https://runwayml.com
-  pricing:
-    model: subscription
-    monthly_usd: 15
+  pricing: {model: subscription, monthly_usd: 15}
   status: active
+
 - slug: kling
   name: Kling
   category: specialty-api
   subcategory: video-gen
   country: CN
   website: https://kling.ai
-  pricing:
-    model: freemium
-    free_tier: true
+  pricing: {model: freemium, free_tier: true}
   status: active
+
 - slug: bfl-flux
   name: Black Forest Labs (FLUX)
   category: specialty-api
   subcategory: image-gen
   country: DE
   website: https://bfl.ai
-  pricing:
-    model: trial-credits
+  pricing: {model: trial-credits}
   status: active
+
+# ============================================================
+# 9. VECTOR DATABASES
+# ============================================================
 - slug: qdrant
   name: Qdrant
   category: vector-db
@@ -1986,11 +1675,10 @@
   license: Apache-2.0
   github: https://github.com/qdrant/qdrant
   website: https://qdrant.tech
-  pricing:
-    model: freemium
-    free_tier: true
+  pricing: {model: freemium, free_tier: true}
   notes: 1GB free cloud
   status: active
+
 - slug: weaviate
   name: Weaviate
   category: vector-db
@@ -1998,10 +1686,9 @@
   license: BSD-3
   github: https://github.com/weaviate/weaviate
   website: https://weaviate.io
-  pricing:
-    model: freemium
-    free_tier: true
+  pricing: {model: freemium, free_tier: true}
   status: active
+
 - slug: milvus
   name: Milvus
   category: vector-db
@@ -2009,9 +1696,9 @@
   license: Apache-2.0
   github: https://github.com/milvus-io/milvus
   website: https://milvus.io
-  pricing:
-    model: self-hosted
+  pricing: {model: self-hosted}
   status: active
+
 - slug: chroma
   name: Chroma
   category: vector-db
@@ -2019,9 +1706,9 @@
   license: Apache-2.0
   github: https://github.com/chroma-core/chroma
   website: https://trychroma.com
-  pricing:
-    model: self-hosted
+  pricing: {model: self-hosted}
   status: active
+
 - slug: pgvector
   name: pgvector
   category: vector-db
@@ -2029,20 +1716,18 @@
   license: PostgreSQL
   github: https://github.com/pgvector/pgvector
   website: https://github.com/pgvector/pgvector
-  pricing:
-    model: self-hosted
-  tags:
-  - postgres-extension
+  pricing: {model: self-hosted}
+  tags: [postgres-extension]
   status: active
+
 - slug: pinecone
   name: Pinecone
   category: vector-db
   website: https://pinecone.io
-  pricing:
-    model: freemium
-    free_tier: true
+  pricing: {model: freemium, free_tier: true}
   notes: 1 free index
   status: active
+
 - slug: lancedb
   name: LanceDB
   category: vector-db
@@ -2050,9 +1735,9 @@
   license: Apache-2.0
   github: https://github.com/lancedb/lancedb
   website: https://lancedb.com
-  pricing:
-    model: self-hosted
+  pricing: {model: self-hosted}
   status: active
+
 - slug: vespa
   name: Vespa
   category: vector-db
@@ -2060,9 +1745,12 @@
   license: Apache-2.0
   github: https://github.com/vespa-engine/vespa
   website: https://vespa.ai
-  pricing:
-    model: self-hosted
+  pricing: {model: self-hosted}
   status: active
+
+# ============================================================
+# 10. EVAL FRAMEWORKS
+# ============================================================
 - slug: promptfoo
   name: Promptfoo
   category: eval-framework
@@ -2070,9 +1758,9 @@
   license: MIT
   github: https://github.com/promptfoo/promptfoo
   website: https://promptfoo.dev
-  pricing:
-    model: self-hosted
+  pricing: {model: self-hosted}
   status: active
+
 - slug: deepeval
   name: DeepEval
   category: eval-framework
@@ -2080,9 +1768,9 @@
   license: Apache-2.0
   github: https://github.com/confident-ai/deepeval
   website: https://deepeval.com
-  pricing:
-    model: self-hosted
+  pricing: {model: self-hosted}
   status: active
+
 - slug: ragas
   name: Ragas
   category: eval-framework
@@ -2091,9 +1779,9 @@
   license: Apache-2.0
   github: https://github.com/explodinggradients/ragas
   website: https://ragas.io
-  pricing:
-    model: self-hosted
+  pricing: {model: self-hosted}
   status: active
+
 - slug: openai-evals
   name: OpenAI Evals
   category: eval-framework
@@ -2101,230 +1789,163 @@
   license: MIT
   github: https://github.com/openai/evals
   website: https://github.com/openai/evals
-  pricing:
-    model: self-hosted
+  pricing: {model: self-hosted}
   status: active
+
+# ============================================================
+# 11. MODEL CATALOGS / OPEN-WEIGHTS FAMILIES
+# ============================================================
 - slug: huggingface-hub
   name: HuggingFace Hub
   category: model-catalog
   website: https://huggingface.co
-  pricing:
-    model: freemium
-    free_tier: true
-  tags:
-  - primary-catalog
+  pricing: {model: freemium, free_tier: true}
+  tags: [primary-catalog]
   status: active
+
 - slug: modelscope
   name: ModelScope (Alibaba)
   category: model-catalog
   country: CN
   website: https://modelscope.cn
-  pricing:
-    model: freemium
-    free_tier: true
+  pricing: {model: freemium, free_tier: true}
   status: active
+
 - slug: models-dev
   name: models.dev
   category: model-catalog
   website: https://models.dev
-  pricing:
-    model: free
-  tags:
-  - programmatic
+  pricing: {model: free}
+  tags: [programmatic]
   status: active
+
 - slug: civitai
   name: Civitai
   category: model-catalog
   subcategory: image-models
   website: https://civitai.com
-  pricing:
-    model: freemium
+  pricing: {model: freemium}
   status: active
+
+# --- Open-Weights Families ---
 - slug: llama-family
   name: Llama (Meta)
   category: open-weights-family
   license: Llama-Community
   github: https://github.com/meta-llama/llama-models
   website: https://llama.com
-  models:
-  - llama-3.3-70b
-  - llama-4-scout
-  - llama-4-maverick
-  - llama-4-behemoth
+  models: [llama-3.3-70b, llama-4-scout, llama-4-maverick, llama-4-behemoth]
   status: active
+
 - slug: qwen-family
   name: Qwen (Alibaba)
   category: open-weights-family
   license: Apache-2.0
   github: https://github.com/QwenLM/Qwen
   website: https://qwenlm.github.io
-  models:
-  - qwen3-0.6b
-  - qwen3-8b
-  - qwen3-72b
-  - qwen3-235b
-  - qwen3.5-397b
+  models: [qwen3-0.6b, qwen3-8b, qwen3-72b, qwen3-235b, qwen3.5-397b]
   status: active
+
 - slug: deepseek-family
   name: DeepSeek
   category: open-weights-family
   license: MIT
   github: https://github.com/deepseek-ai
   website: https://deepseek.com
-  models:
-  - deepseek-v3
-  - deepseek-r1
-  - deepseek-v4-pro
-  - deepseek-v4-flash
-  tags:
-  - moe
-  - mit-license
+  models: [deepseek-v3, deepseek-r1, deepseek-v4-pro, deepseek-v4-flash]
+  tags: [moe, mit-license]
   status: active
+
 - slug: mistral-family
   name: Mistral / Mixtral
   website: https://mistral.ai
   category: open-weights-family
   license: Apache-2.0
-  models:
-  - mistral-7b
-  - mixtral-8x7b
-  - mixtral-8x22b
-  - mistral-nemo
-  - ministral-3b-8b
+  models: [mistral-7b, mixtral-8x7b, mixtral-8x22b, mistral-nemo, ministral-3b-8b]
   status: active
+
 - slug: gemma-family
   name: Gemma (Google)
   website: https://ai.google.dev/gemma
   category: open-weights-family
   license: Gemma-Terms
-  models:
-  - gemma-3-1b
-  - gemma-3-4b
-  - gemma-3-12b
-  - gemma-3-27b
+  models: [gemma-3-1b, gemma-3-4b, gemma-3-12b, gemma-3-27b]
   status: active
+
 - slug: phi-family
   name: Phi (Microsoft)
   website: https://huggingface.co/microsoft/phi-4
   category: open-weights-family
   license: MIT
-  models:
-  - phi-4
-  - phi-4-mini
+  models: [phi-4, phi-4-mini]
   status: active
+
 - slug: yi-family
   name: Yi (01.AI)
   website: https://01.ai
   category: open-weights-family
   license: Apache-2.0
-  models:
-  - yi-6b
-  - yi-9b
-  - yi-34b
+  models: [yi-6b, yi-9b, yi-34b]
   status: active
+
 - slug: internlm-family
   name: InternLM
   category: open-weights-family
   license: Apache-2.0
   github: https://github.com/InternLM/InternLM
   website: https://github.com/InternLM/InternLM
-  models:
-  - internlm2.5-7b
-  - internlm3-20b
+  models: [internlm2.5-7b, internlm3-20b]
   status: active
+
 - slug: glm-family
   name: GLM (Zhipu)
   website: https://github.com/THUDM/GLM-4
   category: open-weights-family
   license: MIT-like
-  models:
-  - glm-4-9b
-  - glm-4-32b
-  - glm-4.5-flash
+  models: [glm-4-9b, glm-4-32b, glm-4.5-flash]
   status: active
+
 - slug: hermes-family
   name: Hermes (Nous Research)
   website: https://nousresearch.com
   category: open-weights-family
   license: Llama-Community
-  models:
-  - hermes-3-405b
-  - hermes-4
+  models: [hermes-3-405b, hermes-4]
   status: active
+
 - slug: gpt-oss
   name: gpt-oss (OpenAI)
   website: https://openai.com/index/introducing-gpt-oss
   category: open-weights-family
   license: Apache-2.0
-  models:
-  - gpt-oss-20b
-  - gpt-oss-120b
-  tags:
-  - openai-released
+  models: [gpt-oss-20b, gpt-oss-120b]
+  tags: [openai-released]
   status: active
+
 - slug: granite-family
   name: Granite (IBM)
   category: open-weights-family
   license: Apache-2.0
   github: https://github.com/ibm-granite
   website: https://www.ibm.com/granite
-  models:
-  - granite-3.0
-  - granite-code
+  models: [granite-3.0, granite-code]
   status: active
+
 - slug: olmo-family
   name: OLMo (AllenAI)
   category: open-weights-family
   license: Apache-2.0
   github: https://github.com/allenai/OLMo
   website: https://allenai.org/olmo
-  models:
-  - olmo-2-1b
-  - olmo-2-13b
-  - olmo-2-32b
-  tags:
-  - fully-open
-  - training-data-released
+  models: [olmo-2-1b, olmo-2-13b, olmo-2-32b]
+  tags: [fully-open, training-data-released]
   status: active
+
 - slug: smollm
   name: SmolLM (HuggingFace)
   category: open-weights-family
   license: Apache-2.0
   github: https://github.com/huggingface/smollm
   website: https://huggingface.co/blog/smollm
-  models:
-  - smollm-135m
-  - smollm-360m
-  - smollm-1.7b
-  status: active
-- slug: kilo-gateway
-  name: Kilo Code Gateway
-  category: gateway
-  subcategory: byok-router
-  country: US
-  website: https://kilo.ai/gateway
-  github: https://github.com/Kilo-Org
-  openai_compatible: true
-  pricing:
-    model: freemium
-    free_tier: true
-    requires_credit_card: false
-    trial_credits_usd: 5
-  models:
-  - anthropic/claude-opus-4.7
-  - anthropic/claude-sonnet-4.6
-  - openai/gpt-5.4
-  - google/gemini-3.1-pro-preview
-  - x-ai/grok-4
-  - deepseek/deepseek-v3.2
-  - moonshotai/kimi-k2.5
-  - minimax/minimax-m2.7
-  tags:
-  - byok
-  - router
-  - unified-api
-  - openrouter-alternative
-  - free-models
-  notes: BYOK gateway with 500+ models. $5 free credit on signup. Public /models endpoint
-    without auth.
+  models: [smollm-135m, smollm-360m, smollm-1.7b]
   status: active
