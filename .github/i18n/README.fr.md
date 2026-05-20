@@ -4,40 +4,40 @@
 
 ![Anchors](https://github.com/felipetruman/free-llm-hub/actions/workflows/check-anchors.yml/badge.svg)
 
-> Un catalogue unifié et communautaire d'API LLM, de moteurs d'inférence, de passerelles et de l'ensemble de l'écosystème LLM open source.
+> Un catalogue unifié et communautaire d'API LLM, de moteurs d'inférence, de passerelles et de l'ensemble de l'écosystème LLM open-source.
 
-**Total des entrées :** 188 • **Dernière mise à jour :** auto-générée
+**Total des entrées :** 187 • **Dernière mise à jour :** généré automatiquement
 
 
-## 📑 Table des matières
+## 📑 Table des Matières
 
-- [📡 API des fournisseurs](#provider-apis) (18)
-- [🔌 Fournisseurs d'inférence](#inference-providers) (24)
-- [💰 Plans d'abonnement](#subscription-plans) (47)
-- [🛠️ Moteurs d'inférence (OSS)](#inference-engines-oss) (13)
-- [🚪 Passerelles / Routeurs](#gateways-routers) (12)
-- [🎨 API spécialisées](#specialty-apis) (22)
-- [🤖 Frameworks d'agents](#agent-frameworks) (5)
+- [📡 API de Fournisseurs](#provider-apis) (18)
+- [🔌 Fournisseurs d'Inférence](#inference-providers) (24)
+- [💰 Plans d'Abonnement](#subscription-plans) (47)
+- [🛠️ Moteurs d'Inférence (OSS)](#inference-engines-oss) (13)
+- [🚪 Passerelles / Routeurs](#gateways-routers) (11)
+- [🎨 API Spécialisées](#specialty-apis) (22)
+- [🤖 Frameworks d'Agents](#agent-frameworks) (5)
 - [📚 Frameworks LLM](#llm-frameworks) (6)
-- [🗄️ Bases de données vectorielles](#vector-databases) (8)
-- [📊 Frameworks d'évaluation](#eval-frameworks) (4)
-- [📦 Catalogues de modèles](#model-catalogs) (4)
-- [💻 Outils de codage](#coding-tools) (5)
-- [🖥️ Interfaces utilisateur de bureau](#desktop-uis) (6)
-- [🧬 Familles de modèles à poids ouverts](#open-weights-families) (14)
+- [🗄️ Bases de Données Vectorielles](#vector-databases) (8)
+- [📊 Frameworks d'Évaluation](#eval-frameworks) (4)
+- [📦 Catalogues de Modèles](#model-catalogs) (4)
+- [💻 Outils de Codage](#coding-tools) (5)
+- [🖥️ Interfaces Utilisateur de Bureau](#desktop-uis) (6)
+- [🧬 Familles de Modèles Open-Weights](#open-weights-families) (14)
 
 ---
 
 
-## 📡 API des fournisseurs
+## 📡 API de Fournisseurs
 
-| Nom | Pays | Tarification | Limites de débit | Modèles / Notes | Lien |
+| Nom | Pays | Tarification | Limites de Taux | Modèles / Notes | Lien |
 |------|:-:|:-:|:-:|------|:-:|
 | **Google AI Studio (Gemini)** | US | 🟢 Freemium | 15 RPM, 1000 RPD | gemini-2.5-pro, gemini-2.5-flash, gemini-2.5-flash-lite | [🔗](https://aistudio.google.com) |
 | **Mistral AI (La Plateforme)** | FR | 🟢 Freemium | 60 RPM, 1,000,000,000 tok/mo | mistral-large-3, mistral-small-3.1, ministral-8b | [🔗](https://console.mistral.ai) |
 | **Cohere** | CA | 🟢 Freemium | 20 RPM | command-a, command-r-plus, command-r7b | [🔗](https://cohere.com) |
 | **Zhipu AI (Z.AI / GLM)** | CN | 🟢 Freemium | — | glm-4.7-flash, glm-4.5-flash, glm-4.6v-flash | [🔗](https://open.bigmodel.cn) |
-| **DeepSeek Platform** | CN | 💵 0,14 $/0,28 $ par MTok | — | deepseek-v3.2, deepseek-r1, deepseek-v4-pro | [🔗](https://platform.deepseek.com) |
+| **DeepSeek Platform** | CN | 💵 $0.14/$0.28 par MTok | — | deepseek-v3.2, deepseek-r1, deepseek-v4-pro | [🔗](https://platform.deepseek.com) |
 | **Moonshot AI (Kimi)** | CN | 🟢 Freemium | — | kimi-k2.5, kimi-k2.6, kimi-long-context | [🔗](https://platform.moonshot.cn) |
 | **DashScope (Alibaba)** | CN | 🟢 Freemium | — | qwen-max, qwen-plus, qwen-vl | [🔗](https://dashscope.aliyun.com) |
 | **MiniMax** | CN | 🎁 Essai | — | minimax-m2.5, minimax-m2.1, abab6.5 | [🔗](https://api.minimax.chat) |
@@ -46,15 +46,15 @@
 | **Baidu Qianfan (ERNIE)** | CN | 🟢 Freemium | — | ernie-4.0, ernie-speed | [🔗](https://qianfan.cloud.baidu.com) |
 | **Tencent Hunyuan** | CN | 🟢 Freemium | — | hunyuan-lite, hunyuan-pro, hunyuan-turbo | [🔗](https://hunyuan.tencent.com) |
 | **InternLM (Shanghai AI Lab)** | CN | 🟢 Freemium | — | internlm2.5, internvl | [🔗](https://internlm.intern-ai.org.cn) |
-| **OpenAI API** | US | 💵 1,25 $/10,0 $ par MTok | — | gpt-5, gpt-5.1, gpt-5.2 | [🔗](https://platform.openai.com) |
-| **Anthropic API** | US | 💵 3,0 $/15,0 $ par MTok | — | claude-sonnet-4.6, claude-opus-4.6, claude-haiku-4 | [🔗](https://console.anthropic.com) |
-| **xAI Grok API** | US | 💵 3,0 $/15,0 $ par MTok | — | grok-3, grok-2 | [🔗](https://console.x.ai) |
-| **Perplexity Sonar API** | US | 💵 Paiement par jeton | — | sonar, sonar-pro | [🔗](https://docs.perplexity.ai) |
+| **OpenAI API** | US | 💵 $1.25/$10.0 par MTok | — | gpt-5, gpt-5.1, gpt-5.2 | [🔗](https://platform.openai.com) |
+| **Anthropic API** | US | 💵 $3.0/$15.0 par MTok | — | claude-sonnet-4.6, claude-opus-4.6, claude-haiku-4 | [🔗](https://console.anthropic.com) |
+| **xAI Grok API** | US | 💵 $3.0/$15.0 par MTok | — | grok-3, grok-2 | [🔗](https://console.x.ai) |
+| **Perplexity Sonar API** | US | 💵 Paiement au jeton | — | sonar, sonar-pro | [🔗](https://docs.perplexity.ai) |
 | **Reka AI** | US | 🎁 Essai | — | reka-core, reka-flash, reka-edge | [🔗](https://reka.ai) |
 
-## 🔌 Fournisseurs d'inférence
+## 🔌 Fournisseurs d'Inférence
 
-| Nom | Pays | Tarification | Limites de débit | Modèles / Notes | Lien |
+| Nom | Pays | Tarification | Limites de Taux | Modèles / Notes | Lien |
 |------|:-:|:-:|:-:|------|:-:|
 | **Groq** | US | 🟢 Freemium | 30 RPM, 1000 RPD | llama-3.3-70b, llama-4-scout, kimi-k2 | [🔗](https://groq.com) |
 | **Cerebras** | US | 🟢 Freemium | 30 RPM, 14400 RPD | llama-3.3-70b, qwen3-235b, gpt-oss-120b | [🔗](https://cloud.cerebras.ai) |
@@ -67,7 +67,7 @@
 | **Kluster AI** | US | 🟢 Freemium | — | deepseek-r1, llama-4-maverick, qwen3-235b | [🔗](https://kluster.ai) |
 | **Together AI** | US | 🎁 Essai de 5 $ | — | llama-3.3, mixtral, qwen-2.5 | [🔗](https://together.ai) |
 | **Fireworks AI** | US | 🎁 Essai de 1 $ | 600 RPM | llama-3.3-70b, qwen-2.5-72b, deepseek-v3 | [🔗](https://fireworks.ai) |
-| **DeepInfra** | US | 💵 0,14 $/0,28 $ par MTok | — | deepseek-v4-flash, kimi-k2.6, glm-5 | [🔗](https://deepinfra.com) |
+| **DeepInfra** | US | 💵 $0.14/$0.28 par MTok | — | deepseek-v4-flash, kimi-k2.6, glm-5 | [🔗](https://deepinfra.com) |
 | **Baseten** | US | 🎁 Essai de 30 $ | — | — | [🔗](https://baseten.co) |
 | **Nebius** | NL | 🎁 Essai | — | — | [🔗](https://nebius.ai) |
 | **Novita AI** | SG | 🎁 Essai | — | — | [🔗](https://novita.ai) |
@@ -81,15 +81,15 @@
 | **Chutes** | — | 🎁 Essai | — | — | [🔗](https://chutes.ai) |
 | **SiliconFlow (硅基流动)** | CN | 🟢 Freemium | 1000 RPM, 50000 TPM | qwen3-8b, deepseek-r1-distill, glm-4.1v-9b | [🔗](https://cloud.siliconflow.cn) |
 
-## 💰 Plans d'abonnement
+## 💰 Plans d'Abonnement
 
-| Nom | Pays | Tarification | Limites de débit | Modèles / Notes | Lien |
+| Nom | Pays | Tarification | Limites de Taux | Modèles / Notes | Lien |
 |------|:-:|:-:|:-:|------|:-:|
-| **ElevenLabs Starter** | — | 💳 5 $/mois | — | 30K caractères TTS/mois | [🔗](https://elevenlabs.io/pricing) |
+| **ElevenLabs Starter** | — | 💳 5 $/mois | — | 30K caracteres TTS/mês | [🔗](https://elevenlabs.io/pricing) |
 | **Suno Pro** | — | 💳 10 $/mois | — | 500 crédits quotidiens | [🔗](https://suno.com/pricing) |
-| **Midjourney Basic** | — | 💳 10 $/mois | — | ~200 images/mois | [🔗](https://midjourney.com) |
+| **Midjourney Basic** | — | 💳 10 $/mois | — | ~200 images/mês | [🔗](https://midjourney.com) |
 | **GitHub Copilot Pro** | — | 💳 10 $/mois | — | gpt-5, claude-opus-4.6, gemini-3 | [🔗](https://github.com/features/copilot) |
-| **Tabnine Pro** | — | 💳 12 $/mois | — | Complétion de code complète, chat multi-LLM | [🔗](https://www.tabnine.com/pricing) |
+| **Tabnine Pro** | — | 💳 12 $/mois | — | Code completion full-length, multi-LLM chat | [🔗](https://www.tabnine.com/pricing) |
 | **Leonardo.ai Apprentice** | — | 💳 12 $/mois | — | — | [🔗](https://leonardo.ai) |
 | **Descript Hobbyist** | — | 💳 12 $/mois | — | 10h de transcription/mois | [🔗](https://descript.com) |
 | **Runway Standard** | — | 💳 15 $/mois | — | — | [🔗](https://runwayml.com/pricing) |
@@ -99,7 +99,7 @@
 | **Writesonic** | — | 💳 16 $/mois | — | — | [🔗](https://writesonic.com) |
 | **GitHub Copilot Business** | — | 💳 19 $/mois | — | — | [🔗](https://github.com/features/copilot) |
 | **Amazon Q Developer Pro** | — | 💳 19 $/mois | — | — | [🔗](https://aws.amazon.com/q/developer) |
-| **NotebookLM Plus** | — | 💳 19,99 $/mois | — | — | [🔗](https://notebooklm.google) |
+| **NotebookLM Plus** | — | 💳 19.99 $/mois | — | — | [🔗](https://notebooklm.google) |
 | **ChatGPT Plus** | — | 💳 20 $/mois | — | gpt-5.4, codex, dall-e-3 | [🔗](https://chatgpt.com) |
 | **Claude Pro** | — | 💳 20 $/mois | — | claude-opus-4.6, claude-sonnet-4.6 | [🔗](https://claude.ai) |
 | **Gemini Advanced** | — | 💳 20 $/mois | — | gemini-3-pro | [🔗](https://gemini.google.com) |
@@ -112,30 +112,30 @@
 | **HeyGen Creator** | — | 💳 29 $/mois | — | — | [🔗](https://heygen.com) |
 | **Synthesia Starter** | — | 💳 29 $/mois | — | — | [🔗](https://synthesia.io) |
 | **Midjourney Standard** | — | 💳 30 $/mois | — | — | [🔗](https://midjourney.com) |
-| **Tabnine Enterprise** | — | 💳 39 $/mois | — | Hébergement autonome VPC/sur site | [🔗](https://www.tabnine.com/pricing) |
+| **Tabnine Enterprise** | — | 💳 39 $/mois | — | Auto-hébergement VPC/sur site | [🔗](https://www.tabnine.com/pricing) |
 | **GitHub Copilot Enterprise** | — | 💳 39 $/mois | — | — | [🔗](https://github.com/features/copilot) |
 | **Cursor Teams** | — | 💳 40 $/mois | — | — | [🔗](https://cursor.com/pricing) |
 | **Jasper Creator** | — | 💳 49 $/mois | — | — | [🔗](https://jasper.ai) |
 | **Copy.ai Pro** | — | 💳 49 $/mois | — | — | [🔗](https://copy.ai) |
 | **Cursor Pro+** | — | 💳 60 $/mois | — | 3x usage Claude/GPT/Gemini | [🔗](https://cursor.com/pricing) |
-| **Windsurf Team** | — | 💳 100 $/mois | — | 1500 crédits/utilisateur, SSO | [🔗](https://windsurf.com/pricing) |
+| **Windsurf Team** | — | 💳 100 $/mois | — | 1500 credits/user, SSO | [🔗](https://windsurf.com/pricing) |
 | **ChatGPT Pro (new)** | — | 💳 100 $/mois | — | 5x Plus, 10x Codex | [🔗](https://chatgpt.com) |
 | **Claude Max 5x** | — | 💳 100 $/mois | — | — | [🔗](https://claude.ai) |
 | **ChatGPT Pro (original)** | — | 💳 200 $/mois | — | 20x Plus, Sora, exclusive Pro models | [🔗](https://chatgpt.com) |
 | **Claude Max 20x** | — | 💳 200 $/mois | — | — | [🔗](https://claude.ai) |
 | **Cursor Ultra** | — | 💳 200 $/mois | — | — | [🔗](https://cursor.com/pricing) |
-| **Windsurf Max** | — | 💳 200 $/mois | — | Crédits illimités, 1M de contexte | [🔗](https://windsurf.com/pricing) |
+| **Windsurf Max** | — | 💳 200 $/mois | — | Unlimited credits, 1M context | [🔗](https://windsurf.com/pricing) |
 | **Gemini Ultra** | — | 💳 250 $/mois | — | gemini-3-pro-deep-think | [🔗](https://gemini.google.com) |
 | **Devin (Cognition AI)** | — | 💳 500 $/mois | — | Agent de codage autonome | [🔗](https://devin.ai) |
 | **OpenAI Enterprise** | — | 💳 Personnalisé | — | Tarification personnalisée, SOC2 | [🔗](https://openai.com/enterprise) |
 | **Anthropic Enterprise** | — | 💳 Personnalisé | — | — | [🔗](https://anthropic.com/enterprise) |
-| **AWS Bedrock** | — | 💵 Paiement par jeton | — | claude, llama, mistral | [🔗](https://aws.amazon.com/bedrock) |
-| **Azure OpenAI** | — | 💵 Paiement par jeton | — | — | [🔗](https://azure.microsoft.com/en-us/products/ai-services/openai-service) |
-| **Google Vertex AI** | — | 💵 Paiement par jeton | — | — | [🔗](https://cloud.google.com/vertex-ai) |
+| **AWS Bedrock** | — | 💵 Paiement au jeton | — | claude, llama, mistral | [🔗](https://aws.amazon.com/bedrock) |
+| **Azure OpenAI** | — | 💵 Paiement au jeton | — | — | [🔗](https://azure.microsoft.com/en-us/products/ai-services/openai-service) |
+| **Google Vertex AI** | — | 💵 Paiement au jeton | — | — | [🔗](https://cloud.google.com/vertex-ai) |
 
-## 🛠️ Moteurs d'inférence (OSS)
+## 🛠️ Moteurs d'Inférence (OSS)
 
-| Nom | Pays | Tarification | Limites de débit | Modèles / Notes | Lien |
+| Nom | Pays | Tarification | Limites de Taux | Modèles / Notes | Lien |
 |------|:-:|:-:|:-:|------|:-:|
 | **vLLM** | — | 🏠 Auto-hébergé | — | — | [🔗](https://vllm.ai) |
 | **Ollama** | — | 🏠 Auto-hébergé | — | — | [🔗](https://ollama.com) |
@@ -153,11 +153,11 @@
 
 ## 🚪 Passerelles / Routeurs
 
-| Nom | Pays | Tarification | Limites de débit | Modèles / Notes | Lien |
+| Nom | Pays | Tarification | Limites de Taux | Modèles / Notes | Lien |
 |------|:-:|:-:|:-:|------|:-:|
 | **OpenRouter** | US | 🟢 Freemium | 20 RPM, 50 RPD | deepseek-r1-free, llama-3.3-70b-free, gpt-oss-120b-free | [🔗](https://openrouter.ai) |
 | **GitHub Models** | US | 🟢 Freemium | 15 RPM, 150 RPD | gpt-5, claude-sonnet-4, llama-3.3-70b | [🔗](https://github.com/marketplace/models) |
-| **Vercel AI Gateway** | US | 🟢 Freemium | — | multiples | [🔗](https://vercel.com/ai-gateway) |
+| **Vercel AI Gateway** | US | 🟢 Freemium | — | multiple | [🔗](https://vercel.com/ai-gateway) |
 | **LiteLLM** | — | 🏠 Auto-hébergé | — | — | [🔗](https://litellm.ai) |
 | **Portkey AI Gateway** | — | 🟢 Freemium | — | — | [🔗](https://portkey.ai) |
 | **OneAPI** | — | 🏠 Auto-hébergé | — | — | [🔗](https://github.com/songquanpeng/one-api) |
@@ -166,11 +166,10 @@
 | **Langfuse** | — | 🟢 Freemium | — | — | [🔗](https://langfuse.com) |
 | **RouteLLM** | — | 🏠 Auto-hébergé | — | — | [🔗](https://lmsys.org/blog/2024-07-01-routellm) |
 | **Arize Phoenix** | — | 🏠 Auto-hébergé | — | — | [🔗](https://docs.arize.com/phoenix) |
-| **Kilo Code Gateway** | US | 🟢 Freemium | — | anthropic/claude-opus-4.7, anthropic/claude-sonnet-4.6, o... | [🔗](https://kilo.ai/gateway) |
 
-## 🎨 API spécialisées
+## 🎨 API Spécialisées
 
-| Nom | Pays | Tarification | Limites de débit | Modèles / Notes | Lien |
+| Nom | Pays | Tarification | Limites de Taux | Modèles / Notes | Lien |
 |------|:-:|:-:|:-:|------|:-:|
 | **ElevenLabs** | US | 🟢 Freemium | — | 10K caractères/mois gratuits | [🔗](https://elevenlabs.io) |
 | **PlayHT** | — | 🟢 Freemium | — | 12.5K caractères/mois gratuits | [🔗](https://play.ht) |
@@ -182,22 +181,22 @@
 | **AssemblyAI** | — | 🎁 Essai de 50 $ | — | — | [🔗](https://assemblyai.com) |
 | **Whisper** | — | 🏠 Auto-hébergé | — | — | [🔗](https://openai.com/research/whisper) |
 | **faster-whisper** | — | 🏠 Auto-hébergé | — | — | [🔗](https://github.com/SYSTRAN/faster-whisper) |
-| **Voyage AI** | — | 🟢 Freemium | — | 50M jetons gratuits | [🔗](https://voyageai.com) |
-| **Jina AI** | — | 🟢 Freemium | — | 1M jetons gratuits | [🔗](https://jina.ai) |
+| **Voyage AI** | — | 🟢 Freemium | — | 50M tokens gratuits | [🔗](https://voyageai.com) |
+| **Jina AI** | — | 🟢 Freemium | — | 1M tokens gratuits | [🔗](https://jina.ai) |
 | **Mixedbread** | DE | 🟢 Freemium | — | — | [🔗](https://mixedbread.ai) |
 | **Nomic Atlas** | — | 🟢 Freemium | — | — | [🔗](https://atlas.nomic.ai) |
 | **fal.ai** | — | 🎁 Essai | — | — | [🔗](https://fal.ai) |
 | **Pollinations** | — | 🟢 Gratuit | — | — | [🔗](https://pollinations.ai) |
-| **Replicate** | — | 🎁 Essai de 0,5 $ | — | — | [🔗](https://replicate.com) |
+| **Replicate** | — | 🎁 Essai de 0.5 $ | — | — | [🔗](https://replicate.com) |
 | **ComfyUI** | — | 🏠 Auto-hébergé | — | — | [🔗](https://www.comfy.org) |
 | **AUTOMATIC1111 WebUI** | — | 🏠 Auto-hébergé | — | — | [🔗](https://github.com/AUTOMATIC1111/stable-diffusion-webui) |
 | **Runway** | — | 💳 15 $/mois | — | — | [🔗](https://runwayml.com) |
 | **Kling** | CN | 🟢 Freemium | — | — | [🔗](https://kling.ai) |
 | **Black Forest Labs (FLUX)** | DE | 🎁 Essai | — | — | [🔗](https://bfl.ai) |
 
-## 🤖 Frameworks d'agents
+## 🤖 Frameworks d'Agents
 
-| Nom | Pays | Tarification | Limites de débit | Modèles / Notes | Lien |
+| Nom | Pays | Tarification | Limites de Taux | Modèles / Notes | Lien |
 |------|:-:|:-:|:-:|------|:-:|
 | **CrewAI** | — | 🏠 Auto-hébergé | — | — | [🔗](https://crewai.com) |
 | **AutoGen** | — | 🏠 Auto-hébergé | — | — | [🔗](https://microsoft.github.io/autogen) |
@@ -207,7 +206,7 @@
 
 ## 📚 Frameworks LLM
 
-| Nom | Pays | Tarification | Limites de débit | Modèles / Notes | Lien |
+| Nom | Pays | Tarification | Limites de Taux | Modèles / Notes | Lien |
 |------|:-:|:-:|:-:|------|:-:|
 | **LangChain** | — | 🏠 Auto-hébergé | — | — | [🔗](https://langchain.com) |
 | **LlamaIndex** | — | 🏠 Auto-hébergé | — | — | [🔗](https://llamaindex.ai) |
@@ -216,9 +215,9 @@
 | **Semantic Kernel** | — | 🏠 Auto-hébergé | — | — | [🔗](https://learn.microsoft.com/semantic-kernel) |
 | **Vercel AI SDK** | — | 🟢 Gratuit | — | — | [🔗](https://sdk.vercel.ai) |
 
-## 🗄️ Bases de données vectorielles
+## 🗄️ Bases de Données Vectorielles
 
-| Nom | Pays | Tarification | Limites de débit | Modèles / Notes | Lien |
+| Nom | Pays | Tarification | Limites de Taux | Modèles / Notes | Lien |
 |------|:-:|:-:|:-:|------|:-:|
 | **Qdrant** | — | 🟢 Freemium | — | 1 Go cloud gratuit | [🔗](https://qdrant.tech) |
 | **Weaviate** | — | 🟢 Freemium | — | — | [🔗](https://weaviate.io) |
@@ -229,27 +228,27 @@
 | **LanceDB** | — | 🏠 Auto-hébergé | — | — | [🔗](https://lancedb.com) |
 | **Vespa** | — | 🏠 Auto-hébergé | — | — | [🔗](https://vespa.ai) |
 
-## 📊 Frameworks d'évaluation
+## 📊 Frameworks d'Évaluation
 
-| Nom | Pays | Tarification | Limites de débit | Modèles / Notes | Lien |
+| Nom | Pays | Tarification | Limites de Taux | Modèles / Notes | Lien |
 |------|:-:|:-:|:-:|------|:-:|
 | **Promptfoo** | — | 🏠 Auto-hébergé | — | — | [🔗](https://promptfoo.dev) |
 | **DeepEval** | — | 🏠 Auto-hébergé | — | — | [🔗](https://deepeval.com) |
 | **Ragas** | — | 🏠 Auto-hébergé | — | — | [🔗](https://ragas.io) |
 | **OpenAI Evals** | — | 🏠 Auto-hébergé | — | — | [🔗](https://github.com/openai/evals) |
 
-## 📦 Catalogues de modèles
+## 📦 Catalogues de Modèles
 
-| Nom | Pays | Tarification | Limites de débit | Modèles / Notes | Lien |
+| Nom | Pays | Tarification | Limites de Taux | Modèles / Notes | Lien |
 |------|:-:|:-:|:-:|------|:-:|
 | **HuggingFace Hub** | — | 🟢 Freemium | — | — | [🔗](https://huggingface.co) |
 | **ModelScope (Alibaba)** | CN | 🟢 Freemium | — | — | [🔗](https://modelscope.cn) |
 | **models.dev** | — | 🟢 Gratuit | — | — | [🔗](https://models.dev) |
 | **Civitai** | — | 🟢 Freemium | — | — | [🔗](https://civitai.com) |
 
-## 💻 Outils de codage
+## 💻 Outils de Codage
 
-| Nom | Pays | Tarification | Limites de débit | Modèles / Notes | Lien |
+| Nom | Pays | Tarification | Limites de Taux | Modèles / Notes | Lien |
 |------|:-:|:-:|:-:|------|:-:|
 | **Aider** | — | 🏠 Auto-hébergé | — | — | [🔗](https://aider.chat) |
 | **Cline** | — | 🏠 Auto-hébergé | — | — | [🔗](https://cline.bot) |
@@ -257,9 +256,9 @@
 | **Continue.dev** | — | 🏠 Auto-hébergé | — | — | [🔗](https://continue.dev) |
 | **Codex CLI** | — | 🏠 Auto-hébergé | — | — | [🔗](https://github.com/openai/codex) |
 
-## 🖥️ Interfaces utilisateur de bureau
+## 🖥️ Interfaces Utilisateur de Bureau
 
-| Nom | Pays | Tarification | Limites de débit | Modèles / Notes | Lien |
+| Nom | Pays | Tarification | Limites de Taux | Modèles / Notes | Lien |
 |------|:-:|:-:|:-:|------|:-:|
 | **Open WebUI** | — | 🏠 Auto-hébergé | — | — | [🔗](https://openwebui.com) |
 | **Text Generation WebUI** | — | 🏠 Auto-hébergé | — | — | [🔗](https://github.com/oobabooga/text-generation-webui) |
@@ -268,9 +267,9 @@
 | **LM Studio** | — | 🟢 Gratuit | — | — | [🔗](https://lmstudio.ai) |
 | **KoboldCpp** | — | 🏠 Auto-hébergé | — | — | [🔗](https://github.com/LostRuins/koboldcpp) |
 
-## 🧬 Familles de modèles à poids ouverts
+## 🧬 Familles de Modèles Open-Weights
 
-| Nom | Pays | Tarification | Limites de débit | Modèles / Notes | Lien |
+| Nom | Pays | Tarification | Limites de Taux | Modèles / Notes | Lien |
 |------|:-:|:-:|:-:|------|:-:|
 | **Llama (Meta)** | — | — | — | llama-3.3-70b, llama-4-scout, llama-4-maverick | [🔗](https://llama.com) |
 | **Qwen (Alibaba)** | — | — | — | qwen3-0.6b, qwen3-8b, qwen3-72b | [🔗](https://qwenlm.github.io) |
@@ -289,27 +288,26 @@
 
 ---
 
-## 🔍 Modèles auto-découverts
+## 🔍 Modèles Découverts Automatiquement
 
-> Auto-généré par `scripts/discover_models.py` sondant les points de terminaison publics `/v1/models`. **10 fournisseurs** répondant publiquement, **1528 modèles** au total.
+> Généré automatiquement par `scripts/discover_models.py` sondant les points d'accès publics `/v1/models`. **9 fournisseurs** répondant publiquement, **1157 modèles** au total.
 
-### 🟢 Points de terminaison publics (aucune authentification requise)
+### 🟢 Points d'accès publics (aucune authentification requise)
 
-| Fournisseur | Modèles | Point de terminaison |
+| Fournisseur | Modèles | Point d'accès |
 |----------|------:|----------|
-| `openrouter` | 367 | `https://openrouter.ai/api/v1` |
-| `kilo-gateway` | 356 | `https://api.kilo.ai/api/gateway` |
-| `vercel-ai-gateway` | 276 | `https://ai-gateway.vercel.sh/v1` |
-| `deepinfra` | 151 | `https://api.deepinfra.com/v1/openai` |
-| `nvidia-nim` | 131 | `https://integrate.api.nvidia.com/v1` |
-| `huggingface-inference` | 117 | `https://router.huggingface.co/v1` |
-| `novita` | 101 | `https://api.novita.ai/v3/openai` |
+| `openrouter` | 358 | `https://openrouter.ai/api/v1` |
+| `vercel-ai-gateway` | 274 | `https://ai-gateway.vercel.sh/v1` |
+| `deepinfra` | 141 | `https://api.deepinfra.com/v1/openai` |
+| `huggingface-inference` | 131 | `https://router.huggingface.co/v1` |
+| `nvidia-nim` | 119 | `https://integrate.api.nvidia.com/v1` |
+| `novita` | 104 | `https://api.novita.ai/v3/openai` |
 | `kluster` | 15 | `https://api.kluster.ai/v1` |
-| `sambanova` | 9 | `https://api.sambanova.ai/v1` |
-| `llm7` | 5 | `https://api.llm7.io/v1` |
+| `llm7` | 8 | `https://api.llm7.io/v1` |
+| `sambanova` | 7 | `https://api.sambanova.ai/v1` |
 
 <details>
-<summary>🔒 **14 fournisseurs nécessitent une authentification** (point de terminaison valide, clé requise)</summary>
+<summary>🔒 **15 fournisseurs nécessitent une authentification** (point d'accès valide, clé requise)</summary>
 
 | Fournisseur | Statut |
 |----------|--------|
@@ -319,6 +317,7 @@
 | `fireworks` | auth_required_401 |
 | `github-models` | auth_required_401 |
 | `groq` | auth_required_401 |
+| `minimax` | auth_required_401 |
 | `mistral` | auth_required_401 |
 | `moonshot` | auth_required_401 |
 | `openai-api` | auth_required_401 |
@@ -331,11 +330,10 @@
 </details>
 
 <details>
-<summary>⚠️ **4 points de terminaison avec erreurs** (À FAIRE : investiguer)</summary>
+<summary>⚠️ **3 points d'accès avec erreurs** (À FAIRE : investiguer)</summary>
 
 | Fournisseur | Statut |
 |----------|--------|
-| `minimax` | empty_response (200 mais aucun modèle) |
 | `ollama-cloud` | not_found_404 |
 | `opencode-zen` | not_found_404 |
 | `perplexity-api` | not_found_404 |

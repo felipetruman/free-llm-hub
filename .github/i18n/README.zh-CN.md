@@ -1,4 +1,4 @@
-# 🌟 免费 LLM 中心
+# 🌟 免费 LLM Hub
 
 **🌍 Read this in other languages:** [🇺🇸 English](../../README.md) • [🇧🇷 Português (BR)](README.pt-BR.md) • [🇵🇹 Português (PT)](README.pt-PT.md) • [🇪🇸 Español](README.es.md) • [🇫🇷 Français](README.fr.md) • **🇨🇳 中文 (简体)** • [🇯🇵 日本語](README.ja.md)
 
@@ -6,7 +6,7 @@
 
 > 一个统一的、社区驱动的 LLM API、推理引擎、网关以及整个开源 LLM 生态系统的目录。
 
-**总条目数：** 188 • **上次更新：** 自动生成
+**总条目数：** 187 • **最后更新：** 自动生成
 
 
 ## 📑 目录
@@ -14,8 +14,8 @@
 - [📡 提供商 API](#provider-apis) (18)
 - [🔌 推理服务提供商](#inference-providers) (24)
 - [💰 订阅计划](#subscription-plans) (47)
-- [🛠️ 推理引擎 (开源)](#inference-engines-oss) (13)
-- [🚪 网关 / 路由器](#gateways-routers) (12)
+- [🛠️ 推理引擎 (OSS)](#inference-engines-oss) (13)
+- [🚪 网关 / 路由器](#gateways-routers) (11)
 - [🎨 专业 API](#specialty-apis) (22)
 - [🤖 智能体框架](#agent-frameworks) (5)
 - [📚 LLM 框架](#llm-frameworks) (6)
@@ -37,7 +37,7 @@
 | **Mistral AI (La Plateforme)** | FR | 🟢 免费增值 | 60 RPM, 1,000,000,000 tok/mo | mistral-large-3, mistral-small-3.1, ministral-8b | [🔗](https://console.mistral.ai) |
 | **Cohere** | CA | 🟢 免费增值 | 20 RPM | command-a, command-r-plus, command-r7b | [🔗](https://cohere.com) |
 | **Zhipu AI (Z.AI / GLM)** | CN | 🟢 免费增值 | — | glm-4.7-flash, glm-4.5-flash, glm-4.6v-flash | [🔗](https://open.bigmodel.cn) |
-| **DeepSeek Platform** | CN | 💵 $0.14/$0.28 per MTok | — | deepseek-v3.2, deepseek-r1, deepseek-v4-pro | [🔗](https://platform.deepseek.com) |
+| **DeepSeek Platform** | CN | 💵 每百万 Token $0.14/$0.28 | — | deepseek-v3.2, deepseek-r1, deepseek-v4-pro | [🔗](https://platform.deepseek.com) |
 | **Moonshot AI (Kimi)** | CN | 🟢 免费增值 | — | kimi-k2.5, kimi-k2.6, kimi-long-context | [🔗](https://platform.moonshot.cn) |
 | **DashScope (Alibaba)** | CN | 🟢 免费增值 | — | qwen-max, qwen-plus, qwen-vl | [🔗](https://dashscope.aliyun.com) |
 | **MiniMax** | CN | 🎁 试用 | — | minimax-m2.5, minimax-m2.1, abab6.5 | [🔗](https://api.minimax.chat) |
@@ -46,9 +46,9 @@
 | **Baidu Qianfan (ERNIE)** | CN | 🟢 免费增值 | — | ernie-4.0, ernie-speed | [🔗](https://qianfan.cloud.baidu.com) |
 | **Tencent Hunyuan** | CN | 🟢 免费增值 | — | hunyuan-lite, hunyuan-pro, hunyuan-turbo | [🔗](https://hunyuan.tencent.com) |
 | **InternLM (Shanghai AI Lab)** | CN | 🟢 免费增值 | — | internlm2.5, internvl | [🔗](https://internlm.intern-ai.org.cn) |
-| **OpenAI API** | US | 💵 $1.25/$10.0 per MTok | — | gpt-5, gpt-5.1, gpt-5.2 | [🔗](https://platform.openai.com) |
-| **Anthropic API** | US | 💵 $3.0/$15.0 per MTok | — | claude-sonnet-4.6, claude-opus-4.6, claude-haiku-4 | [🔗](https://console.anthropic.com) |
-| **xAI Grok API** | US | 💵 $3.0/$15.0 per MTok | — | grok-3, grok-2 | [🔗](https://console.x.ai) |
+| **OpenAI API** | US | 💵 每百万 Token $1.25/$10.0 | — | gpt-5, gpt-5.1, gpt-5.2 | [🔗](https://platform.openai.com) |
+| **Anthropic API** | US | 💵 每百万 Token $3.0/$15.0 | — | claude-sonnet-4.6, claude-opus-4.6, claude-haiku-4 | [🔗](https://console.anthropic.com) |
+| **xAI Grok API** | US | 💵 每百万 Token $3.0/$15.0 | — | grok-3, grok-2 | [🔗](https://console.x.ai) |
 | **Perplexity Sonar API** | US | 💵 按量付费 | — | sonar, sonar-pro | [🔗](https://docs.perplexity.ai) |
 | **Reka AI** | US | 🎁 试用 | — | reka-core, reka-flash, reka-edge | [🔗](https://reka.ai) |
 
@@ -67,7 +67,7 @@
 | **Kluster AI** | US | 🟢 免费增值 | — | deepseek-r1, llama-4-maverick, qwen3-235b | [🔗](https://kluster.ai) |
 | **Together AI** | US | 🎁 $5 试用 | — | llama-3.3, mixtral, qwen-2.5 | [🔗](https://together.ai) |
 | **Fireworks AI** | US | 🎁 $1 试用 | 600 RPM | llama-3.3-70b, qwen-2.5-72b, deepseek-v3 | [🔗](https://fireworks.ai) |
-| **DeepInfra** | US | 💵 $0.14/$0.28 per MTok | — | deepseek-v4-flash, kimi-k2.6, glm-5 | [🔗](https://deepinfra.com) |
+| **DeepInfra** | US | 💵 每百万 Token $0.14/$0.28 | — | deepseek-v4-flash, kimi-k2.6, glm-5 | [🔗](https://deepinfra.com) |
 | **Baseten** | US | 🎁 $30 试用 | — | — | [🔗](https://baseten.co) |
 | **Nebius** | NL | 🎁 试用 | — | — | [🔗](https://nebius.ai) |
 | **Novita AI** | SG | 🎁 试用 | — | — | [🔗](https://novita.ai) |
@@ -76,7 +76,7 @@
 | **Scaleway Generative APIs** | FR | 🟢 免费增值 | — | — | [🔗](https://www.scaleway.com/en/generative-apis) |
 | **Lepton AI** | US | 🎁 $10 试用 | — | — | [🔗](https://lepton.ai) |
 | **Avian.io** | US | 🟢 免费增值 | — | llama-3.1-405b, qwen | [🔗](https://avian.io) |
-| **Featherless AI** | US | 💳 $10/月 | — | 4000+ HF models | [🔗](https://featherless.ai) |
+| **Featherless AI** | US | 💳 $10/月 | — | 4000+ HF 模型 | [🔗](https://featherless.ai) |
 | **Targon (Bittensor)** | US | 🟢 免费增值 | — | deepseek, llama | [🔗](https://targon.com) |
 | **Chutes** | — | 🎁 试用 | — | — | [🔗](https://chutes.ai) |
 | **SiliconFlow (硅基流动)** | CN | 🟢 免费增值 | 1000 RPM, 50000 TPM | qwen3-8b, deepseek-r1-distill, glm-4.1v-9b | [🔗](https://cloud.siliconflow.cn) |
@@ -85,13 +85,13 @@
 
 | 名称 | 国家 | 定价 | 速率限制 | 模型 / 备注 | 链接 |
 |------|:-:|:-:|:-:|------|:-:|
-| **ElevenLabs Starter** | — | 💳 $5/月 | — | 30K 字符 TTS/月 | [🔗](https://elevenlabs.io/pricing) |
-| **Suno Pro** | — | 💳 $10/月 | — | 500 每日积分 | [🔗](https://suno.com/pricing) |
-| **Midjourney Basic** | — | 💳 $10/月 | — | 约 200 张图片/月 | [🔗](https://midjourney.com) |
+| **ElevenLabs Starter** | — | 💳 $5/月 | — | 每月 3 万字符 TTS | [🔗](https://elevenlabs.io/pricing) |
+| **Suno Pro** | — | 💳 $10/月 | — | 每日 500 积分 | [🔗](https://suno.com/pricing) |
+| **Midjourney Basic** | — | 💳 $10/月 | — | 每月约 200 张图片 | [🔗](https://midjourney.com) |
 | **GitHub Copilot Pro** | — | 💳 $10/月 | — | gpt-5, claude-opus-4.6, gemini-3 | [🔗](https://github.com/features/copilot) |
 | **Tabnine Pro** | — | 💳 $12/月 | — | 全长代码补全，多 LLM 聊天 | [🔗](https://www.tabnine.com/pricing) |
 | **Leonardo.ai Apprentice** | — | 💳 $12/月 | — | — | [🔗](https://leonardo.ai) |
-| **Descript Hobbyist** | — | 💳 $12/月 | — | 10 小时转录/月 | [🔗](https://descript.com) |
+| **Descript Hobbyist** | — | 💳 $12/月 | — | 每月 10 小时转录 | [🔗](https://descript.com) |
 | **Runway Standard** | — | 💳 $15/月 | — | — | [🔗](https://runwayml.com/pricing) |
 | **Windsurf Pro** | — | 💳 $15/月 | — | claude-opus-4.6, gpt-5.4, gemini-3-pro | [🔗](https://windsurf.com/pricing) |
 | **Mistral Le Chat Pro** | — | 💳 $15/月 | — | mistral-large-3 | [🔗](https://chat.mistral.ai) |
@@ -117,23 +117,23 @@
 | **Cursor Teams** | — | 💳 $40/月 | — | — | [🔗](https://cursor.com/pricing) |
 | **Jasper Creator** | — | 💳 $49/月 | — | — | [🔗](https://jasper.ai) |
 | **Copy.ai Pro** | — | 💳 $49/月 | — | — | [🔗](https://copy.ai) |
-| **Cursor Pro+** | — | 💳 $60/月 | — | 3 倍 Claude/GPT/Gemini 用量 | [🔗](https://cursor.com/pricing) |
-| **Windsurf Team** | — | 💳 $100/月 | — | 1500 积分/用户, SSO | [🔗](https://windsurf.com/pricing) |
-| **ChatGPT Pro (new)** | — | 💳 $100/月 | — | 5 倍 Plus, 10 倍 Codex | [🔗](https://chatgpt.com) |
+| **Cursor Pro+** | — | 💳 $60/月 | — | Claude/GPT/Gemini 使用量 3 倍 | [🔗](https://cursor.com/pricing) |
+| **Windsurf Team** | — | 💳 $100/月 | — | 每用户 1500 积分，SSO | [🔗](https://windsurf.com/pricing) |
+| **ChatGPT Pro (new)** | — | 💳 $100/月 | — | Plus 版 5 倍，Codex 10 倍 | [🔗](https://chatgpt.com) |
 | **Claude Max 5x** | — | 💳 $100/月 | — | — | [🔗](https://claude.ai) |
-| **ChatGPT Pro (original)** | — | 💳 $200/月 | — | 20 倍 Plus, Sora, 独家 Pro 模型 | [🔗](https://chatgpt.com) |
+| **ChatGPT Pro (original)** | — | 💳 $200/月 | — | Plus 版 20 倍，Sora，专属专业模型 | [🔗](https://chatgpt.com) |
 | **Claude Max 20x** | — | 💳 $200/月 | — | — | [🔗](https://claude.ai) |
 | **Cursor Ultra** | — | 💳 $200/月 | — | — | [🔗](https://cursor.com/pricing) |
-| **Windsurf Max** | — | 💳 $200/月 | — | 无限积分, 1M 上下文 | [🔗](https://windsurf.com/pricing) |
+| **Windsurf Max** | — | 💳 $200/月 | — | 无限积分，1M 上下文 | [🔗](https://windsurf.com/pricing) |
 | **Gemini Ultra** | — | 💳 $250/月 | — | gemini-3-pro-deep-think | [🔗](https://gemini.google.com) |
 | **Devin (Cognition AI)** | — | 💳 $500/月 | — | 自主编程智能体 | [🔗](https://devin.ai) |
-| **OpenAI Enterprise** | — | 💳 自定义 | — | 自定义定价, SOC2 | [🔗](https://openai.com/enterprise) |
-| **Anthropic Enterprise** | — | 💳 自定义 | — | — | [🔗](https://anthropic.com/enterprise) |
+| **OpenAI Enterprise** | — | 💳 定制 | — | 定制定价，SOC2 | [🔗](https://openai.com/enterprise) |
+| **Anthropic Enterprise** | — | 💳 定制 | — | — | [🔗](https://anthropic.com/enterprise) |
 | **AWS Bedrock** | — | 💵 按量付费 | — | claude, llama, mistral | [🔗](https://aws.amazon.com/bedrock) |
 | **Azure OpenAI** | — | 💵 按量付费 | — | — | [🔗](https://azure.microsoft.com/en-us/products/ai-services/openai-service) |
 | **Google Vertex AI** | — | 💵 按量付费 | — | — | [🔗](https://cloud.google.com/vertex-ai) |
 
-## 🛠️ 推理引擎 (开源)
+## 🛠️ 推理引擎 (OSS)
 
 | 名称 | 国家 | 定价 | 速率限制 | 模型 / 备注 | 链接 |
 |------|:-:|:-:|:-:|------|:-:|
@@ -166,15 +166,14 @@
 | **Langfuse** | — | 🟢 免费增值 | — | — | [🔗](https://langfuse.com) |
 | **RouteLLM** | — | 🏠 自托管 | — | — | [🔗](https://lmsys.org/blog/2024-07-01-routellm) |
 | **Arize Phoenix** | — | 🏠 自托管 | — | — | [🔗](https://docs.arize.com/phoenix) |
-| **Kilo Code Gateway** | US | 🟢 免费增值 | — | anthropic/claude-opus-4.7, anthropic/claude-sonnet-4.6, o... | [🔗](https://kilo.ai/gateway) |
 
 ## 🎨 专业 API
 
 | 名称 | 国家 | 定价 | 速率限制 | 模型 / 备注 | 链接 |
 |------|:-:|:-:|:-:|------|:-:|
-| **ElevenLabs** | US | 🟢 免费增值 | — | 10K 字符/月 免费 | [🔗](https://elevenlabs.io) |
-| **PlayHT** | — | 🟢 免费增值 | — | 12.5K 字符/月 免费 | [🔗](https://play.ht) |
-| **Cartesia (Sonic)** | — | 🟢 免费增值 | — | 10K 字符/月 免费 | [🔗](https://cartesia.ai) |
+| **ElevenLabs** | US | 🟢 免费增值 | — | 每月 1 万字符免费 | [🔗](https://elevenlabs.io) |
+| **PlayHT** | — | 🟢 免费增值 | — | 每月 1.25 万字符免费 | [🔗](https://play.ht) |
+| **Cartesia (Sonic)** | — | 🟢 免费增值 | — | 每月 1 万字符免费 | [🔗](https://cartesia.ai) |
 | **Resemble AI** | — | 🎁 试用 | — | — | [🔗](https://resemble.ai) |
 | **Coqui XTTS** | — | 🏠 自托管 | — | — | [🔗](https://github.com/coqui-ai/TTS) |
 | **Kokoro TTS** | — | 🏠 自托管 | — | — | [🔗](https://github.com/hexgrad/kokoro) |
@@ -182,8 +181,8 @@
 | **AssemblyAI** | — | 🎁 $50 试用 | — | — | [🔗](https://assemblyai.com) |
 | **Whisper** | — | 🏠 自托管 | — | — | [🔗](https://openai.com/research/whisper) |
 | **faster-whisper** | — | 🏠 自托管 | — | — | [🔗](https://github.com/SYSTRAN/faster-whisper) |
-| **Voyage AI** | — | 🟢 免费增值 | — | 50M tokens 免费 | [🔗](https://voyageai.com) |
-| **Jina AI** | — | 🟢 免费增值 | — | 1M tokens 免费 | [🔗](https://jina.ai) |
+| **Voyage AI** | — | 🟢 免费增值 | — | 50M Token 免费 | [🔗](https://voyageai.com) |
+| **Jina AI** | — | 🟢 免费增值 | — | 1M Token 免费 | [🔗](https://jina.ai) |
 | **Mixedbread** | DE | 🟢 免费增值 | — | — | [🔗](https://mixedbread.ai) |
 | **Nomic Atlas** | — | 🟢 免费增值 | — | — | [🔗](https://atlas.nomic.ai) |
 | **fal.ai** | — | 🎁 试用 | — | — | [🔗](https://fal.ai) |
@@ -220,7 +219,7 @@
 
 | 名称 | 国家 | 定价 | 速率限制 | 模型 / 备注 | 链接 |
 |------|:-:|:-:|:-:|------|:-:|
-| **Qdrant** | — | 🟢 免费增值 | — | 1GB 免费云服务 | [🔗](https://qdrant.tech) |
+| **Qdrant** | — | 🟢 免费增值 | — | 1GB 免费云存储 | [🔗](https://qdrant.tech) |
 | **Weaviate** | — | 🟢 免费增值 | — | — | [🔗](https://weaviate.io) |
 | **Milvus** | — | 🏠 自托管 | — | — | [🔗](https://milvus.io) |
 | **Chroma** | — | 🏠 自托管 | — | — | [🔗](https://trychroma.com) |
@@ -291,25 +290,24 @@
 
 ## 🔍 自动发现的模型
 
-> 由 `scripts/discover_models.py` 探测公共 `/v1/models` 端点自动生成。**10 个提供商**公开响应，总计 **1528 个模型**。
+> 由 `scripts/discover_models.py` 探测公共 `/v1/models` 端点自动生成。**9 个提供商**公开响应，总计 **1157 个模型**。
 
-### 🟢 公共端点 (无需认证)
+### 🟢 公共端点（无需认证）
 
 | 提供商 | 模型数量 | 端点 |
 |----------|------:|----------|
-| `openrouter` | 367 | `https://openrouter.ai/api/v1` |
-| `kilo-gateway` | 356 | `https://api.kilo.ai/api/gateway` |
-| `vercel-ai-gateway` | 276 | `https://ai-gateway.vercel.sh/v1` |
-| `deepinfra` | 151 | `https://api.deepinfra.com/v1/openai` |
-| `nvidia-nim` | 131 | `https://integrate.api.nvidia.com/v1` |
-| `huggingface-inference` | 117 | `https://router.huggingface.co/v1` |
-| `novita` | 101 | `https://api.novita.ai/v3/openai` |
+| `openrouter` | 358 | `https://openrouter.ai/api/v1` |
+| `vercel-ai-gateway` | 274 | `https://ai-gateway.vercel.sh/v1` |
+| `deepinfra` | 141 | `https://api.deepinfra.com/v1/openai` |
+| `huggingface-inference` | 131 | `https://router.huggingface.co/v1` |
+| `nvidia-nim` | 119 | `https://integrate.api.nvidia.com/v1` |
+| `novita` | 104 | `https://api.novita.ai/v3/openai` |
 | `kluster` | 15 | `https://api.kluster.ai/v1` |
-| `sambanova` | 9 | `https://api.sambanova.ai/v1` |
-| `llm7` | 5 | `https://api.llm7.io/v1` |
+| `llm7` | 8 | `https://api.llm7.io/v1` |
+| `sambanova` | 7 | `https://api.sambanova.ai/v1` |
 
 <details>
-<summary>🔒 <strong>14 个提供商需要认证</strong> (端点有效，需要密钥)</summary>
+<summary>🔒 <strong>15 个提供商需要认证</strong>（端点有效，需要密钥）</summary>
 
 | 提供商 | 状态 |
 |----------|--------|
@@ -319,6 +317,7 @@
 | `fireworks` | auth_required_401 |
 | `github-models` | auth_required_401 |
 | `groq` | auth_required_401 |
+| `minimax` | auth_required_401 |
 | `mistral` | auth_required_401 |
 | `moonshot` | auth_required_401 |
 | `openai-api` | auth_required_401 |
@@ -331,11 +330,10 @@
 </details>
 
 <details>
-<summary>⚠️ <strong>4 个端点存在错误</strong> (TODO: 调查)</summary>
+<summary>⚠️ <strong>3 个端点出错</strong>（待调查）</summary>
 
 | 提供商 | 状态 |
 |----------|--------|
-| `minimax` | empty_response (200 但无模型) |
 | `ollama-cloud` | not_found_404 |
 | `opencode-zen` | not_found_404 |
 | `perplexity-api` | not_found_404 |
