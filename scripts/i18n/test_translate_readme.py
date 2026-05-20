@@ -7,11 +7,13 @@ from pathlib import Path
 import pytest
 
 sys.path.insert(0, str(Path(__file__).parent))
-from translate_readme import (  # noqa: E402
+from _selector import (  # type: ignore[import-not-found]  # noqa: E402
     build_selector,
-    file_hash,
     inject_selector,
     strip_existing_selector,
+)
+from translate_readme import (  # noqa: E402
+    file_hash,
     strip_outer_fence,
     validate_translation,
 )

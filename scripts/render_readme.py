@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
 """Gera README.md mestre a partir de data/hub.yaml."""
+import sys
 from pathlib import Path
 from collections import defaultdict
 import json
 import yaml
+
+# Import shared selector module so render preserves the i18n header on every run
+sys.path.insert(0, str(Path(__file__).resolve().parent / "i18n"))
+from _selector import inject_selector  # type: ignore[import-not-found]  # noqa: E402
 
 def _slugify(text: str) -> str:
     """Anchor compatível com GitHub/MkDocs: remove emojis, lowercase, hifeniza."""
@@ -148,6 +153,7 @@ def main():
         grouped[e["category"]].append(e)
 
     out = ["# 🌟 Free LLM Hub\n"]
+    out.append("![Anchors](https://github.com/felipetruman/free-llm-hub/actions/workflows/check-anchors.yml/badge.svg)\n")
     out.append("> A unified, community-driven catalog of LLM APIs, inference engines, gateways, and the entire OSS LLM ecosystem.\n")
     out.append(f"**Total entries:** {len(hub)} • **Last updated:** auto-generated\n")
     out.append("\n## 📑 Table of Contents\n")
@@ -188,7 +194,10 @@ def main():
     out.append("Edit `data/0X-*.yaml`, run `./scripts/merge.sh && python scripts/render_readme.py`, open a PR.\n")
     out.append("## 📜 License\nMIT\n")
 
-    (ROOT / "README.md").write_text("\n".join(out))
+    rendered = "\n".join(out)
+    # Inject language selector after H1 (single source of truth for i18n header)
+    rendered = inject_selector(rendered, current_lang=None)
+    (ROOT / "README.md").write_text(rendered)
     print(f"✅ README.md gerado com {len(hub)} entradas")
 
 if __name__ == "__main__":
