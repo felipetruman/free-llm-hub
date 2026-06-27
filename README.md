@@ -156,6 +156,7 @@
 | Name | Country | Pricing | Rate Limits | Models / Notes | Link |
 |------|:-:|:-:|:-:|------|:-:|
 | **OpenRouter** | US | 🟢 Freemium | 20 RPM, 50 RPD | deepseek-r1-free, llama-3.3-70b-free, gpt-oss-120b-free | [🔗](https://openrouter.ai) |
+| **RouteScope** | — | 💳 Prepaid from $5 | — | 100+ models, OpenAI/Claude/Gemini/QWen/DeepSeek-compatible interfaces, single API key, cross-format conversion | [🔗](https://www.routescope.ai/?utm_source=GitHub&campaignid=b7ed95aaaafb413da5ff64b2bf01b8c1&utm_term=github) |
 | **GitHub Models** | US | 🟢 Freemium | 15 RPM, 150 RPD | gpt-5, claude-sonnet-4, llama-3.3-70b | [🔗](https://github.com/marketplace/models) |
 | **Vercel AI Gateway** | US | 🟢 Freemium | — | multiple | [🔗](https://vercel.com/ai-gateway) |
 | **LiteLLM** | — | 🏠 Self-hosted | — | — | [🔗](https://litellm.ai) |
