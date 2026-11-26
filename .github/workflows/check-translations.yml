@@ -29,7 +29,7 @@ jobs:
           python-version: '3.12'
 
       - name: Install minimal deps
-        run: pip install 'python-dotenv==1.0.1' 'pytest==8.3.3'
+        run: pip install 'python-dotenv==1.0.1' 'pytest==8.3.3' 'PyYAML==6.0.3'
 
       - name: Run unit tests
         run: python -m pytest scripts/i18n/test_translate_readme.py -v
