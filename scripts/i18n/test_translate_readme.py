@@ -1,4 +1,4 @@
-"""Unit tests for translate_readme — pure functions only (no API, no FS state)."""
+"""Unit and local integration tests for README translations (no provider API)."""
 from __future__ import annotations
 
 import sys
@@ -164,3 +164,79 @@ class TestFileHash:
 
 if __name__ == "__main__":
     sys.exit(pytest.main([__file__, "-v"]))
+
+
+class TestDiscoverySync:
+    @staticmethod
+    def setup_docs(path):
+        i18n = path / ".github" / "i18n"
+        i18n.mkdir(parents=True)
+        repo = Path(__file__).resolve().parents[2]
+        for src in (repo / ".github" / "i18n").iterdir():
+            (i18n / src.name).write_bytes(src.read_bytes())
+        source = path / "README.md"
+        source.write_bytes((repo / "README.md").read_bytes())
+        return source, i18n
+
+    @staticmethod
+    def render_snapshot(path, source, *, editorial_change=False):
+        import os
+        import shutil
+        import subprocess
+
+        repo = Path(__file__).resolve().parents[2]
+        shutil.copytree(repo / "scripts", path / "scripts")
+        shutil.copytree(repo / "data", path / "data")
+        # git history and provider credentials are not needed to render a local snapshot.
+        (path / "data" / "discovered_models.json").write_text(
+            '{"openrouter":{"status":"ok","count":42},'
+            '"groq":{"status":"auth_required_401","count":0},'
+            '"kluster":{"status":"error_ConnectError","count":0}}',
+            encoding="utf-8",
+        )
+        if editorial_change:
+            old = source.read_text(encoding="utf-8").replace("community-driven", "curated")
+            source.write_text(old, encoding="utf-8")
+            (path / ".github/i18n/.source-hash").write_text(file_hash(old), encoding="utf-8")
+        subprocess.run(
+            [sys.executable, str(path / "scripts/render_readme.py")],
+            check=True,
+            cwd=path,
+            env={key: value for key, value in os.environ.items() if key != "GEMINI_API_KEY"},
+        )
+
+    def test_snapshot_change_updates_all_locale_tables_and_source_hash(self, tmp_path):
+        source, i18n = self.setup_docs(tmp_path)
+        self.render_snapshot(tmp_path, source)
+
+        translations = list(i18n.glob("README.*.md"))
+        assert len(translations) == 6
+        for translation in translations:
+            updated = translation.read_text(encoding="utf-8")
+            assert "| `openrouter` | 42 | `https://openrouter.ai/api/v1` |" in updated
+            assert "| `groq` | auth_required_401 |" in updated
+            assert "| `kluster` | error_ConnectError |" in updated
+            assert "| `openrouter` | 358 |" not in updated
+            original = Path(__file__).resolve().parents[2] / ".github" / "i18n" / translation.name
+            assert updated.split("## 🔍 ", 1)[0] == original.read_text(encoding="utf-8").split("## 🔍 ", 1)[0]
+
+        assert (i18n / ".source-hash").read_text(encoding="utf-8").strip() == file_hash(source.read_text(encoding="utf-8"))
+
+    def test_change_outside_snapshot_does_not_advance_hash(self, tmp_path):
+        source, i18n = self.setup_docs(tmp_path)
+        translated = i18n / "README.pt-BR.md"
+        before = translated.read_bytes()
+        self.render_snapshot(tmp_path, source, editorial_change=True)
+
+        assert translated.read_bytes() == before
+        assert (i18n / ".source-hash").read_text(encoding="utf-8").strip() != file_hash(source.read_text(encoding="utf-8"))
+
+    def test_missing_translation_does_not_advance_hash_or_rewrite_other_locales(self, tmp_path):
+        source, i18n = self.setup_docs(tmp_path)
+        (i18n / "README.ja.md").unlink()
+        translated = i18n / "README.es.md"
+        before = translated.read_bytes()
+        self.render_snapshot(tmp_path, source)
+
+        assert translated.read_bytes() == before
+        assert (i18n / ".source-hash").read_text(encoding="utf-8").strip() != file_hash(source.read_text(encoding="utf-8"))
